@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <script>
+     /*        alert('hi');
+            conssole.log('hello');
+            var a;
+            conssole.log(a);
+            var a= 1;
+            a =2;
+            conssole.log(a);
+
+            let b;
+            console.log(b)
+            b = 1;
+
+
+            console.log( a + "반갑습니다.");
+            console.log( a + b);
+
+            console.log(parseInt(a) + b);
+        
+ */
+
+           /*  console.log(typeof('문자'));
+            console.log(typeof(245));
+            console.log(typeof(function() {} ));
+            console.log(typeof(true));
+            console.log(typeof({}));
+            console.log(typeof([]));
+            console.log(typeof(NaN));
+            console.log(typeof(null));
+ */
+         
+
+
+
+           /*  function sesac() {
+                console.log("sesac hi!");
+            }
+
+            sesac();
+
+            function sesac2( abc, test, a ){
+                alert(abc + " " + a + "hello");
+            }
+
+            sesac2("홍길동", "", "13");
+ */
+
+            function init() {
+                console.log("init")
+            }
+            function parameter1( a ) {
+                console.log("a")
+            }
+            function  parameter2( a, b ) {
+                console.log( a + "" + b);
+            }
+            function  parameter3( a, b, c ) {
+                console.log( "a : " + a);
+                console.log( "b : " + b);
+                console.log( "c : " + c)
+            }
+
+            init(); //기본 형태 실행
+            parameter1(); //parameter을 받음에도 전달하지 않기
+            parameter1(10); //parmeter 1개 전달
+            parameter2(5, 3);
+            parameter3(1, 2, 3);
+            var variable = "hi";
+            parameter3(variable, variable, variable);
+            parameter3(variable, variable);
+            parameter3(variable);
+
+
+
+            // if ( 5>3 ) {
+            //             //조건 참이라면 실행
+            // } else if( 3<2 ){
+
+            // } else {
+            //             //조건1이 참이 아니고 조건2가 참이라면 실행
+            // } //3개중에 하나 실행
+            //  else{
+            //     //조건123다 아닐때
+            //  }
+
+                var a = prompt ("숫자를 입력하세요.");
+                if (a > 10) {
+                    console.log("a > 10");
+                } else if (a > 5) {
+                    console.log("a > 5");
+                } else if (a > 0) {
+                    console.log("a > 0");
+                } else{
+                    console.log("no!");
+                }
+
+               for( var i = 0; i < 10; i ++){
+                    console.log( " i :" + i );
+               }
+
+               while ( j < 10 ) {
+                console.log("j:" +j);
+                j = j +1;
+               }
+   
+
+        </script>
+    </head>
+</html>

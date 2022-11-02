@@ -1,0 +1,47 @@
+<style>
+    .d-inline1{
+        display: inline-block;
+        /* 인라인블록. 기본적으로 인라인. 여기에 블록요소 가짐. */
+        background-color: red;
+
+    }
+    .d-inline2{
+        display: inline-block;
+        /* 참고. display: none 콘텐츠 영역을 숨기는 역할.
+        장점은 크기를 차지하지 않음. 본인크기 유지하면서 사라지는게 아니라 크기자체도 
+        화면에서 사라짐.
+        */
+        background-color: yellow;
+        width: 100px;
+    }
+    .d-flex{
+        display: flex; 
+        align-items: center; 
+        /* align-items.세로정렬.주의할점: 세로크기없으면 정렬이 되지않음. so, height 100px준것.
+           justify-content.(ex.justify-content: space-between; )가로정렬.  
+           none */
+        height: 100px;
+    }
+
+
+</style>
+
+<div class="d-inline1">
+    d-inline1
+</div>
+ <!-- 인라인 크기 만큼만. 조절 안됨. 블록은 조절 가능.-->
+<div class="d-inline2">
+    d-inline2
+</div>
+<div class="d-flex">
+ <!-- 플렉스 속성. 레이아웃 정렬 잘하도록하는... -->
+    <div style="background-color: green;">
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <div style="background-color: blue;">
+        <div>3</div>
+    </div>    
+    <div>4</div>
+    
+</div>

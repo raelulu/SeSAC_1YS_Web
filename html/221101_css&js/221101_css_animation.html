@@ -1,0 +1,39 @@
+<style>
+    div{
+        background: blue;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        animation-name: anim;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-iteration-count: 3;
+        animation-timing-function: ease;
+    }
+    @keyframes anim{
+        0%{left: 0px;}
+        50%{left: 200px;}
+        100%{left: 100px;}
+    }
+    
+    .div1{
+        background: yellow;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation-name: anim2;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-iteration-count: 5;
+       
+    }
+    @keyframes anim2{
+        to {top: 100px; opacity: 0;}
+        from {top: 300px; opacity: 1;}
+       
+    }
+</style>
+
+<div></div>
+
+<div class="div1"></div>

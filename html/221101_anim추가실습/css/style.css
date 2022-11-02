@@ -147,7 +147,7 @@ section .sky .cloud_1 {
   left: 0%;
   top: -30px;
   animation-name: cloud_1;
-  animation-duration: 15s;
+  animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }

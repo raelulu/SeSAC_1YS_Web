@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            function imgChange(){
+                var tag = document.querySelector(img);
+                console.log(tag);
+                console.log(tag.src);
+                console.log(tag.width);
+                tag.src ="sea.jpg";
+            }
+
+            function add() {
+                var li = document.createElement("li");
+                li.innerText = "새로운 li";
+                console.log(li);
+
+                var ul = document.querySelector("ul");
+                // ul.append(li, "123");
+                //append 가장뒤에 추가..
+                ul.appendChild(li);
+                // 둘 차이 append는 한번추가할때 여러개 넣을수 있음.
+                // appendChild는 한개만
+            }
+
+            function remove(){
+                var li = document.querySelector("li")
+                /* consolde.log(li.parentElement); */
+                li.remove();
+
+                var ul = document.querySelector("ul")
+                var li2 = document.querySelector("li")
+                ul.removeChild(li2)
+
+               /*  li.parentElement.removeChild(li); */
+                //부모요소.removeChild(자식요소)
+            }
+        </script>
+    </head>
+    <body>
+        <img src="cat.jpg" width="100" height="100">
+        <button type="button" onclick="imgChange()">이미지</button>
+
+        <ul>
+            <li>이름</li>
+        </ul>
+        <button type="button" onclick="add()">추가</button>
+        <button type="button" onclick="remove()">삭제</button>
+    </body>
+</html>

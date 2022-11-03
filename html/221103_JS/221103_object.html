@@ -1,0 +1,121 @@
+<script>
+    var cat = {
+            name: '나비',
+            age: 1,
+            mew: function() {
+            return "야옹";
+        }
+    }
+    console.log(cat);
+    console.log(cat.name);
+    console.log(cat.mew());
+
+
+    function hello() {
+        return "안녕";
+    }
+    function hi() {
+        console.log("hi");
+    }
+    console.log(hi());
+    var a = hello()
+    console.log(a);
+    // -기본적인 객체 자료형
+
+    var arr1 = [1,2,3,'a','b','c'];
+    var arr2 = new Array(1,2,3,'a','b','c');
+    console.log(arr1);
+    console.log( arr1[0]);
+    // 배열1안에 0번째 인덱스 가져와라-1
+    console.log(arr1.indexOf('a'))
+    // arr1배열에 a라는 요소가 몇번째 인덱스인지 구할때 사용.-3
+    console.log("length : " + arr1.length)
+    // 배열 길이 출력가능. length라는 속성이 있어서 가져오는것..-6가져옴.
+
+
+    /* push 가장마지막으로
+    pop 가장마지막에 있는것 꺼내는거.. 
+    shift 맨앞에있는애 꺼내는거.
+    unshift 0번째 인덱스에 추가.(모든 인덱스 하나씩 밀린다..)
+    */
+    arr1.push('d');//가장 마지막에 요소 추가
+   console.log(arr1);
+   arr1.pop('');//가장 마지막에 요소 제거
+   console.log(arr1);
+
+   
+   console.log(arr1[2]);
+   arr1.unshift('0');// 가장 앞의요소
+   console.log(arr1[2]);
+   console.log(arr1);
+   arr1.shift();// 가장 앞의요소제거
+   console.log(arr1[2]);
+   console.log(arr1);
+
+    var me ={
+    name:'홍길동',
+    birth:'0101'}
+    console.log(me);
+    console.log(me["name"]);
+    console.log(me.name)
+
+    me.gender = 'M';
+    me["age"] =10;
+    console.log(me);
+
+    // 정리
+    var ar = [1,2];
+    //배열에서 값을 가져올때는 index를
+    console.log(ar[0])
+
+
+    console.log("--------------")
+    var date = new Date();
+    console.log(date)
+
+
+    console.log(date.getYear());
+    console.log(date.getMonth());
+    console.log(date.getDate());
+    console.log(date.getDay());
+    console.log(date.getTime());
+    console.log(date.getHours());
+
+    // Math.PI //파이값 3.14적는게 편할수도.
+
+    console.log("---------------")
+
+    console.log(Math.min());
+    console.log(Math.min(-10,2,10));
+    console.log(Math.min(0,'a',5));
+
+    console.log(Math.max(-10,2,10));
+
+    console.log(Math.random()); //무작위반환. 0~1사이에 수.
+    var min =1; var max=10;
+    console.log(Math.random()* (max-min)+min);
+
+    console.log(Math.round(1.2)); //반올림하는것.
+    console.log(Math.round(-1.7));
+
+    console.log(Math.floor(1.9));//각각 내림과 올림. 기준은 정수.
+    console.log(Math.ceil(1.1));
+
+</script> 
+
+<!-- 딕셔너리는 키 값 쌍으로 인덱스개념없고..배열 키로 가져온다 
+객체에서는 점으로도 가져올수있고,대괄호로 가져올수있다-->
+
+<!-- new Date()
+new Date(밀리초)//1970년 1월1일부터 0시부터 밀리초만큼 지난 날짜
+new Date(2016,5,25,15,40) -->
+
+<!-- Math는 정확한결과엔 노노.. -->
+
+<!-- DOM 문서 객체 모델.
+태그들을 가져오가나 힐수있는 모델...
+한눈에 파악할수 있는 모델.
+ 새로운 요소,태그들을 만들수 있고
+ 글 가져올수도 있고 이벤트 가져올수도있고..
+ 이벤트에 반응할수도 있고.. 
+document 객체 다룰....어렵;;;;;;;;;;;;;;;;;;-->

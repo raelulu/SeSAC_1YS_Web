@@ -13,6 +13,27 @@
       
     </head>
     <body>
+
+            <div>
+            <h1>방명록입니다.</h1>
+            <p>작성자: <input type="text" id="input1"> </p>
+            <p>내용: <input type="text" id="input2"> </p>
+            <button type="button" onclick="writen()">작성하기</button>
+            </div>
+            <table border="1">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성일</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+            </table>
+    
+            </div>  
         
             <script>
             var number = 1;
@@ -40,26 +61,7 @@
              }
             </script>
 
-        <div>
-        <h1>방명록입니다.</h1>
-        <p>작성자: <input type="text" id="input1"> </p>
-        <p>내용: <input type="text" id="input2"> </p>
-        <button type="button" onclick="writen()">작성하기</button>
-        </div>
-        <table border="1">
-        <thead>
-        <tr>
-            <th>번호</th>
-            <th>작성자</th>
-            <th>내용</th>
-            <th>작성일</th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        </tbody>
-        </table>
-
-        </div>  
+    
 
 
 

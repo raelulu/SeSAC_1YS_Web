@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <style>
+            .class {
+                background-color: pink;
+                font-weight:bold;
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+        <script>
+            function addClass(){
+                $("div").addClass("class");
+            }
+            function removeClass(){
+                $("div").removeClass("class");
+            }
+            function hasClass(){
+                $("div").hasClass("class");
+            }//이클래스를 가지고있는지 아닌지 여부 알수있는거
+            function toggleClass(){
+                $("div").toggleClass("class");
+            }//없으면 추가하고 있으면 삭제하는 친구. 생긴지 얼마 안됨.
+        </script>
+    </head>
+    <body>
+        <div>
+            div입니다.
+        </div>
+        <button type="button" onclick="addClass()">addClass</button>
+        <button type="button" onclick="removeClass()">removeClass</button>
+        <button type="button" onclick="hasClass()">hasClass</button>
+        <button type="button" onclick="toggleClass()">toggleClass</button>
+    </body>
+</html>
+
+<!-- 스위치클래스는 제이쿼리UI 다운해서 써야.. -->

@@ -1,6 +1,9 @@
+
 <html>
   <head>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js" ></script>
+    <script src="../jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link href="../jquery-ui-1.13.2/jquery-ui.css">
 ​
     <style>
       div {
@@ -31,13 +34,21 @@
     </style>
     <script>
       function changeColor(){
-        if ( $("#div1").hasClass("red") ) $("#div1").switchClass("red","orange");
-        else if ( $("#div1").hasClass("orange") ) $("#div1").switchClass("orange","yellow");
-        else if ( $("#div1").hasClass("yellow") ) $("#div1").switchClass("yellow", "green");
-        else if ( $("#div1").hasClass("green") ) $("#div1").switchClass("green","blue");
-        else if ( $("#div1").hasClass("blue") ) $("#div1").switchClass("blue","purple");
-        else if ( $("#div1").hasClass("purple") ) $("#div1").switchClass("purple","red");
+              if ($("#div1").hasClass("red"))  $("#div1").switchClass("red","Orange")
+              
+              else if ($("#div1").hasClass("orange"))  $("#div1").switchClass("Orange","yellow")
+                     
+              else if ($("#div1").hasClass("yellow"))  $("#div1").switchClass("yellow","green")
+                   
+              else if ($("#div1").hasClass("green"))  $("#div1").switchClass("green","blue")
+                         
+              else if ($("#div1").hasClass("blue"))  $("#div1").switchClass("blue","purple")
+
+              else if ($("#div1").hasClass("purple"))  $("#div1").switchClass("purple","red")
+                       
       }
+        
+      
     </script>
   </head>
   <body>

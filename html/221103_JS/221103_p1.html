@@ -1,36 +1,6 @@
 <html>
     <head>
         <title>간단 계산기 실습</title>
-        <script>
-        function cal(){
-            var value1 = Number(document.getElementById("value1").value);
-            var value2 = Number(document.getElementById("value2").value);
-            var operator = document.getElementById("operator").value;
-
-            
-            
-            if (operator == "+") {
-                    result = value1 + value2;
-            }
-            else if (operator=="-"){
-                    result = value1 - value2;
-            }    
-            else if (operator=="*"){
-                    result = value1 * value2;
-            }        
-            else if(operator=="/"){
-                    result = value1 / value2;
-            }
-            document.getElementById("result").value= result;
-        }
-        function reset(){
-            document.getElementById("value1").value="";
-            document.getElementById("value2").value="";
-            document.getElementById("operator").value="";
-            document.getElementById("result").value="";
-        }
-
-        </script>
     </head>
     <body>
      
@@ -40,11 +10,100 @@
         <div>연산자:<input type="text" id="operator"></div>
         <div>결과<input type="text" id="result"></div>
         
-    
 
         <button type="button" onclick="cal()" value="">계산하기</button>
-        <button type="button" onclick="remove()" value="">초기화</button>
+        <button type="button" onclick="reset()" value="">초기화</button>
+
+
+        <script>
+            function cal(){
+                var value1 = Number(document.getElementById("value1").value);
+                var value2 = Number(document.getElementById("value2").value);
+                var operator = document.getElementById("operator").value;
+                var result = document.getElementById("result").value;
+              
+                
+                
+                if (operator == "+") {
+                        result = value1 + value2;
+                }
+                else if (operator=="-"){
+                        result = value1 - value2;
+                }    
+                else if (operator=="*"){
+                        result = value1 * value2;
+                }        
+                else if (operator=="/"){
+                        result = value1 / value2;
+                }
+                document.getElementById("result").value= result;
+            }
+            function reset(){
+                value1.value="";
+                value2.value="";
+                operator.value="";
+                result.value="";
+            }
+    
+            </script>
 
         
     </body>
 </html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Document_실습</title>
+        <script>
+            var num1 = 0;
+            var num2 = 0;
+            function operator(){
+                num1 = document.getElementById("num1").value;
+                num2 = document.getElementById("num2").value;
+                var sign = document.getElementById("sign").value;
+                var result = document.getElementById("result").value;
+            switch (sign){
+                case '+':
+                        result = Number(num1) + Number(num2) ;
+                        document.getElementById("result").value = result;
+                        break;
+                case '-':
+                        result = Number(num1) - Number(num2) ;
+                        document.getElementById("result").value = result;
+                        break;
+                case '*':
+                        result = Number(num1) * Number(num2) ;
+                        document.getElementById("result").value = result;
+                        break;
+                case '/':
+                        result = Number(num1) / Number(num2) ;
+                        document.getElementById("result").value = result;
+                        break;
+                }
+            }
+        function refresh() {
+            document.getElementById("result").value = "";
+            document.getElementById("sign").value = "";
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            num = 0;
+        }
+        </script>
+    </head>
+    <body>
+        <form>
+            값1: <input type="text" id="num1"><br>
+            값2: <input type="text" id="num2"><br>
+            연산자: <input type="text" id="sign"><br>
+            결과: <input type="text" id="result"><br><br>
+            <button type="button" onclick="operator();">계산하기</button>
+            <button type="button" onclick="refresh();">초기화</button>
+        </form>
+    </body>
+</html>
+ -->

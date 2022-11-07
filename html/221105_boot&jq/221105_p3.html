@@ -4,22 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <title>이미지 바꾸기</title>
+    <style>
+    
+        img{
+            width: 200px;
+            height: 200px;
+            
+        }
+    </style>
 </head>
 <body>
-    <img src="" alt="">
-    <button onclick="click1(1)"></button>
-    <button onclick="click1(2)"></button>
+    <img src="apple.jpg">  
+    <br> 
+    <button onclick="click1()">사과</button>
+    <button onclick="click2()">바나나</button>
+    <button onclick="click3()">포도</button>
+    <button onclick="click4()">복숭아</button>
 
     <script>
-        var img = document.querySelector("img")
+/* 
+        var img1 = document.querySelector("img")
 
-        function click1(ab){
-            img.src= ab
+        function click1(){
+           img1.src = "apple.jpg"
         }
+        function click2(){
+           img1.src = "banana.jpg "
+        }
+        function click3(){
+           img1.src = "grape.jpg "
+        }
+        function click4(){
+           img1.src = "peach.jpg "
+        } */
+
+        function click1(){
+            $("img").attr("src","apple.jpg");
+        }
+        function click2(){
+            $("img").attr("src","banana.jpg");
+        }
+        function click3(){
+            $("img").attr("src","grape.jpg");
+        }    
+        function click4(){
+            $("img").attr("src","peach.jpg");
+        }
+       
+       
+       
+       
+       
 
     </script>
-
-
+    
 </body>
 </html>

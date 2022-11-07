@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>방명록입니다.</h3>
+<p>작성자<input type="" id="input1"></p>
+<p>내용<input type="" id="input2"></p>
+<button onclick="click1()">작성</button>
+
+<table border="1px">
+    <thead>
+        <tr>
+            <td>번호</td>
+            <td>작성자</td>
+            <td>내용</td>
+            <td>작성일</td>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    <script>
+        var number =1;
+        function click1(){
+            var name = document.querySelector("#input1").value;
+            var content = document.querySelector("#input2").value;
+
+            var table = document.querySelector("tbody");  // getElementById("table");이 왜 안먹지???
+            var garo = document.createElement("tr"); 
+
+            var kan1 = document.createElement("td")
+            kan1.innerText = number;
+            number =number +1;
+            var kan2 = document.createElement("td")
+            kan2.innerText =name;
+            var kan3 = document.createElement("td")
+            kan3.innerText =content;
+
+            var kan4 = document.createElement("td")
+
+            var date = new Date();
+            console.log(date);
+
+            kan4.innerText =date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+ 
+            garo.appendChild(kan1);
+            garo.appendChild(kan2);
+            garo.appendChild(kan3);
+            garo.appendChild(kan4);
+            table.appendChild(garo);
+
+        }
+    </script>
+</table>    
+</body>
+</html>
+

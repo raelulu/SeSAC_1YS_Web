@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" 
+                integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+                crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        body 태그
+        <input type="text" id="input1">
+        <p id="alert"></p>
+        <div style="width: 100px; height: 500px; background-color: yellow;" id="div1"></div>
+        <script>
+            //키보드 이벤트 .키다운은 키를 내렸다. 키업은 키를 올렸다.
+            $("#input1").keydown(function(e){
+                console.log("keydown:", e.currentTarget.value); 
+                $("#alert").text("글자가 입력됨," + e.currentTarget.value);
+                
+            })
+/* 
+            $("#input1").keydown(function(e){
+                console.log("input keydown");     
+                console.log(e);
+                if (e.keyCode == 13 ){
+                    console.log("enter key");
+                }); */
+                // 0이라는 숫자 입력한다보자
+                //사람이 손으로 키보드 눌렀는데 글자가 아직 나오기전 ->키다운.
+                //실제 글자가 나올때 -> 키프레스
+                //키보드에서 손을 뗀다 ->키업
+                //디운 프레스 업 순서로 키보드 이벤트가 발생한다..
+                //키프레스 사라짐????????????!!!!!!!!키프레스 배운거 머릿속에서 지워..
+
+            
+            $("#input1").keyup(function(e){
+                console.log("input keyup");     
+                //console.log(e):
+            });
+        
+            //마우스 이벤트
+            $("#div1").click(function(){
+                console.log("div click");
+                // console.log("e:",ev);
+            });
+            $("#div1").mouseover(function(){
+                console.log("div mouseover");
+            });
+            //호버랑 마우스오버와의 차이? 마우스오버 선택한요소에 마우스 올렸을때만 감지. 호버는 마우스 뗏을때 까지 감지.
+            $("#div1").hover(function(){
+                console.log("div hover");               
+            },function(){
+                console.log("div hover2");               
+            });//   뗏을때 감지하려면....2개함수 넣음 된다..
+
+            $(window).scroll(function(){
+                console.log("window scroll");     
+            }) //특정요소 특정게시판에 스크롤 걸때........         마우스이벤트는 요정도 4가지가 잘쓰임.. 더 알아보던가..
+
+
+
+            // $(document).ready(function(){
+            //     alert("document.ready");
+            // });
+            //로딩 이벤트
+            $(function(){
+                alert("ready")
+            });
+        </script>
+    </body>
+</html>

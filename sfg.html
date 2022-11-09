@@ -12,7 +12,23 @@
 
     <style>
 
-     
+        .img{
+                position: relative;
+                background-image: url(/qq.jpg);                                                               
+                height: 100vh;
+                background-size: cover;
+            }
+        .img .content{
+                position: absolute;
+                top:50%;
+                 left:50%;
+                 transform: translate(-50%, -50%);                                                                   
+                 font-size: 100px;
+                 color: white;
+                 z-index: 2;
+                 text-align: center;
+            }
+
  
     </style>
 
@@ -63,19 +79,15 @@
 
   </nav>
 
-  <div>
-    <div class="image">
-      <img src="/qq.jpg" class="img-fluid" alt="">
-      <div class="text">
-        <h5>Orla Gartland</h5>
-        <h6>musician and songwriter</h6>
-      </div>
-    </div>
-
   
 
 
-
+    <div class="img">
+        <div class="content">
+            <h5>Orla Gartland</h5>
+            <h6>musician and songwriter</h6>
+        </div>
+       
 
 
 
@@ -104,5 +116,3 @@
 
 </body>
 </html>
-
-

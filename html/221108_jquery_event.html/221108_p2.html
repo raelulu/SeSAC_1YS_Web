@@ -8,12 +8,37 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>전체실습</title>
+    <title>실습</title>
 
     <style>
 
-     
+        .img{
+                position: relative;
+                background-image: url(/qq.jpg);
+                                                                               
+                height: 100vh;
+                background-size: cover;
+            }
+        .content{
+                 position: fixed; 
+                 top:70%;
+                 left:50%;
+                 transform: translate(-50%, -50%);                                                                   
+                 font-size: 100px;
+                 color: white;
+                 z-index: 2;
+                 text-align: center;
+                 padding-bottom: 80px
+            }
+        .stream { 
+                  width: 100% ;
+                  height: 300px;
+                  background-color: aliceblue;
+        }
  
+        .page1P{
+          
+        }
     </style>
 
   
@@ -37,8 +62,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              ListenHere
-            </a>
+              ListenHere</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Spotify</a></li>
               <li><a class="dropdown-item" href="#">Apple musuic</a></li>
@@ -63,38 +87,34 @@
 
   </nav>
 
-  <div>
-    <div class="image">
-      <img src="/qq.jpg" class="img-fluid" alt="">
-      <div class="text">
-        <h5>Orla Gartland</h5>
-        <h6>musician and songwriter</h6>
-      </div>
-    </div>
-
   
 
 
+    <div class="img" style="overflow-y: scroll; height: 1800px;">
+    </div>
 
 
 
+    <div class="content" style="left: 30%;" >
+    
+    <h2>Orla Gartland</h2>
+    <h4>musician and songwriter</h4>
+    
+    <div class="stream"> 
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/571588386&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/orlagartland" title="orla gartland" target="_blank" style="color: #cccccc; text-decoration: none;">orla gartland</a> · <a href="https://soundcloud.com/orlagartland/why-am-i-like-this-by-orla-gartland" title="why am i like this?" target="_blank" style="color: #cccccc; text-decoration: none;">why am i like this?</a></div>
+    </div>
 
 
+    <div class="page1"> </div>
+       
+   
+
+    <script>
+
+    </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     const myModal = document.getElementById('myModal')
     const myInput = document.getElementById('myInput')
     myModal.addEventListener('shown.bs.modal', () => {
@@ -104,5 +124,3 @@
 
 </body>
 </html>
-
-

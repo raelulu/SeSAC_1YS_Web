@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert박스만들기</title> 
+    <!-- 이런 웹상UI만드는거 엄청 많음.. so, 법칙알아서 만들기.왜냐 만드느패턴 다똑같.
+     UI만드는 step~
+    1. HTML/CSS로 미리 디자인(필요하면 미리 숨김)
+    2. 필요할때 보여달라고 코드짬(자바스크립트로) -->
+    
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">알림창임
+        <button onclick="document.getElementById('alert').style.display='none';">닫기</button>
+    </div>
+    <!-- <button onclick="이안에 자바스크립 ~~~막 작성할수있음">버튼</button>
+                      그러면 버튼클릭시 이 안 코드 실행해줌! -->
+    <!-- <button onclick="alert박스 보여주셈~~">버튼</button>이렇게 코드짜면 의도한 UI가 완성될것. -->
+    <button onclick="작명();">버튼</button>
+
+         <!-- <button onclick="click1()">버튼</button>
+         <script>
+             click1(){
+                 document.getElementById("alert").style.display= "block"
+             }
+        </script> 이렇게 함수 쓰는거 안되나??? 되는데 왜 안돼지..???? 한번더 해보기. -->
+
+ 
+        <!-- ->자바스크립트 function문법이 긴코드 축약하고싶을때 쓰는 것. -->
+
+        <script>
+            function 작명(){
+                document.getElementById('alert').style.display ='block';
+            }
+
+          /* function 작명은 구체적인게 좋음 알아볼수있게. 알림창열기() 이런식으로..*/
+        </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.alert-box {
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    display: none;
+    /* 보여주고싶으면 디스플레이 block으로 */
+}

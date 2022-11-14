@@ -16,11 +16,11 @@
 <body>
     
     <div class="alert-box" id="alert">알림창임
-        <button onclick="document.getElementById('alert').style.display='none';">닫기</button>
+        <button onclick="close1();">닫기</button>
     </div>
     <!-- <button onclick="이안에 자바스크립 ~~~막 작성할수있음">버튼</button>
                       그러면 버튼클릭시 이 안 코드 실행해줌! -->
-    <!-- <button onclick="alert박스 보여주셈~~">버튼</button>이렇게 코드짜면 의도한 UI가 완성될것. -->
+    <!-- <button onclick="alert박스 보여줘~~">버튼</button>이렇게 코드짜면 의도한 UI가 완성될것. -->
     <button onclick="작명();">버튼</button>
 
          <!-- <button onclick="click1()">버튼</button>
@@ -29,8 +29,9 @@
                  document.getElementById("alert").style.display= "block"
              }
         </script> 이렇게 함수 쓰는거 안되나??? 되는데 왜 안돼지..???? 한번더 해보기. -->
+                                      <!-- 다시 해보니 됨! -->
 
- 
+
         <!-- ->자바스크립트 function문법이 긴코드 축약하고싶을때 쓰는 것. -->
 
         <script>
@@ -41,6 +42,12 @@
           /* function 작명은 구체적인게 좋음 알아볼수있게. 알림창열기() 이런식으로..*/
         </script>
 
+        <script>
+            function close1(){
+                document.getElementById('alert').style.display='none';
+            }
+        </script>
+         <!-- 왜 함수명이 close일때는 안되는 거지??? close1하니까 됨. -->
 
 
 </body>

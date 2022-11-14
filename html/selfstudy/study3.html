@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function의 파라미터문법</title> 
+            <!-- 함수의 또 다른 기능. -->
+    <link rel="stylesheet" href="main.css">
+    <style>
+       .alert-box {
+                      background-color: skyblue;
+                      padding: 20px;
+                      color: white;
+                      border-radius: 5px;
+                      display: none;
+                    }
+    </style>
+
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">알림창임
+        <button onclick="알림창닫기('none');">닫기</button>
+    </div>
+    <button onclick="알림창열기('block');">버튼</button>
+
+
+    <script>
+             // 오늘 배울 내용 : function에 구멍뚫기
+       /*      function 알림창열기(){
+                document.getElementById('alert').style.display ='block';
+            } */
+   /*          function 알림창열기(구멍){
+                document.getElementById('alert').style.display =구멍;
+            } */
+            /* 함수 만들때 소괄호붙여야. 소괄호의 용도는?
+            ()안에 구멍채우고 = ; 안에 구멍채우고. 이게 구멍뚫기 */
+            /* 알림창열기('안녕');
+            알림창열기('바보');
+            알림창열기안에있는 긴 코드를 실행해주세요는 똑같.
+            단, 첫번째는 구멍자리에 안녕 집어넣어서 실행해주세요
+            단, 첫번째는 구멍자리에 바보 집어넣어서 실행해주세요
+            그러면 = 구멍 ; 하고 뿅!실행.
+            알림창열기(123) 숫자니까 ''없고, 위에안녕바보는 문자라''있는것.
+            알림창열기('123')하면 문자가되는거고.. */
+
+            //그래서 구멍 어디에 쓰는데??
+
+/*          알림창열기('block');           의 뜻은 구멍에 'block'넣어서 알림창열기 안의 코드 실행해주라.so, 알림창열릴것같음.
+            알림창닫기('none');            이러면 알림창 닫힐듯.
+            그래서 위에  
+
+            <div class="alert-box" id="alert">알림창임
+                <button onclick="알림창닫기();">닫기</button>
+            </div>
+            <button onclick="알림창열기();">버튼</button>  여기에
+
+
+            <div class="alert-box" id="alert">알림창임
+                <button onclick="알림창닫기('none');">닫기</button>
+            </div>
+            <button onclick="알림창열기('block');">버튼</button>로
+            입력하면 될것!
+            
+*/
+
+/*             function 알림창닫기(){
+                document.getElementById('alert').style.display='none';
+            } */
+    </script>
+
+
+    <script>
+        //그래서 구멍 어디에 쓰는데?? 앞에 두번쓴거 주석처리.
+        //지금은 함수1개로 2종류 코드실행가능.
+        //구멍 뚫어놓으면 함수하나로 다양한 코드 실행가능해짐.
+
+            function 알림창열기(구멍){
+                document.getElementById('alert').style.display =구멍;
+                    } 
+
+        // 비슷한 함수가 많으면 그냥 가변적인 부분을 구멍뚫어봄.
+
+        알림창열기('block');
+        //혹은
+        알림창열기('none');
+        //처럼 각각 원하는 것들 구멍자리에 집어넣어서 다양한 기능을 실행가능.
+
+       /*  이 구멍을 용어로 파라미터(인자,Argument)라 부른다. */
+    /*  파라미터문법은 필수 문법은 아님. 함수 여러개 만들기 귀찮을 때 사용.
+        function도 마찬가지로 필수 문법이 아니다. 편의를 위해 쓰는 것일뿐 */
+
+    </script>
+
+
+
+</body>
+</html>

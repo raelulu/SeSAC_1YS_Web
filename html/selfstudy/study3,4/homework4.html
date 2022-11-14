@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>버1,버2누르면 alert박스뜨도록 만들기</title>
+    <style>
+        .alert-box {
+                       background-color: skyblue;
+                       padding: 20px;
+                       color: white;
+                       border-radius: 5px;
+                       display: none;
+                     }
+     </style>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p id="title">아이디 입력하세요</p>
+        <button onclick="알림창열기('none');">닫기</button>
+    </div> 
+
+    <button onclick="아이디알림창()">버튼1</button>
+    <button onclick="비번알림창()">버튼2</button>
+    
+        <!-- 복잡하면 한글부터 짜고 코드로 옮긴다. -->
+<!-- 
+        <button onclick=" 1.제목을 바꿈 2. 띄움 ">버튼1</button>
+        <button onclick="버2()">버튼-2</button> 
+                
+                BUT 더 정확히,자세히 짜야..
+            
+        <button onclick=" 1.P태그 내용을 아이디 입력으로 바꿈 2. 띄움 ">버튼1</button>
+        <button onclick="버2()">버튼2</button> 
+    
+        저기 1,2번 코드짜서 집어 넣어볼게요옹~~-->
+    
+   
+   <script>
+      
+        // 1. P태그 내용을 아이디입력으로 바꿈
+        // document.getElementById('title').innerHTML = '아이디입력하셈';
+        // 2. 띄움
+        // document.getElementById('alert').style.display = 'block';
+        
+        // 이제 이거를 위에 버튼 onclick에 넣을껀데 그러면 넘 더러웡~~
+        // so, 함수로 축약하자구!!
+
+        // function 작명(){
+        //     document.getElementById('title').innerHTML = '아이디입력하셈';
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+        //위처럼 {}안에 축약하고싶은 긴코드 넣는다.
+
+        function 아이디알림창(){
+            document.getElementById('title').innerHTML = '아이디입력하셈';
+            document.getElementById('alert').style.display = 'block';
+        }
+        //작명엔 아이디 알림창으로.  so,아이디알림창()을 다시 저위에 onclick=""안에 넣는다-
+
+        function 비번알림창(){
+            document.getElementById('title').innerHTML = '비번입력하셈';
+            document.getElementById('alert').style.display = 'block';
+        }
+         
+        //위 함수 두개 매우 비슷. so, 파라미터 문법써도 유용할듯. 만들어연습하자!!!
+
+
+
+
+        function 알림창열기(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+    </script>
+</body>
+</html>

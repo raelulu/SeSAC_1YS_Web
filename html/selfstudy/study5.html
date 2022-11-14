@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 이벤트리스너</title>
+    <!-- 클릭, 키입력, 스크롤, 드래그 ->event라고함. 
+    addEventListener('event명')
+    클릭이벤트 체크하고싶으면 ('event명')안에 click집어넣으면됨.
+    키입력 감지하고싶으면 ('keydown')이라던지, 스크롤감지하고싶으면 ('scroll')라던지 이벤트명 적음된다..
+    이벤트리스너는 일종의 감시자 역할로 생각하면됨. 유저가 행하는 이벤트를 감시하는....
+    'mouseover'는 마우스를 갖다 댔을때 의미...
+    유저가 이버튼에 마우스갖다대면 실행되게... 이벤트리스너는 20개정도...-->
+    <style>
+        .alert-box {
+                       background-color: skyblue;
+                       padding: 20px;
+                       color: white;
+                       border-radius: 5px;
+                       display: none;
+                     }
+     </style>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p class="title1">알림창임</p>
+        <!-- <button class="title1" onclick="알림창열기('none');">닫기</button>
+        위에 버튼에 onclick="알림창열기('none'); 자바스크립트쓴거 자체가 드러움..
+        onclick쓰지않고 개발 끝마칠수있는 방법. addEventListener문법을 사용.(이거쓰면 onclick필요없음) -->
+        <button id="close">닫기</button>
+            <!-- 버튼에 id부여하고 -->
+    </div>
+
+    <button onclick="아이디알림창()">버튼1</button>
+    <button onclick="비번알림창()">버튼2</button>
+
+    <script>
+        document.getElementById('close').addEventListener('click', function(){
+            // 코드~~~~~~~적어
+            document.getElementById('alert').style.display= 'none';
+
+        });
+        //이렇게쓰면 온클릭쓸필요없음. 
+        //단 () 안에 파라미터 2가지 입력해야
+        //첫번째 'click'이라는 문자. 두번째는 함수문법입력.
+        //document.getElementById('close')를 'click'하면  코드~~~~~~~적어 여기있는 코드 실행해줌.
+        //코드~~~적어 부분에document.getElementById('alert').style.display= 'none'; 넣음.
+
+    //위 function문법 축약하자면...위 function(){]를 콜백함수라함.(파라미터자리에 들어가는 함수.)
+        //코드를 순차적 실행할때 가끔보임. ------이해하기!!!99ㅑㅕㅑㅕㅈ겨ㅑ댖ㅉ:
+
+
+        function 알림창열기(구멍){
+            document.getElementById('alert').style.display= 구멍;
+
+        }
+
+
+        function 아이디알림창(){
+            document.getElementsByClassName('title1')[0].innerHTML='아이디입력';
+            //ID가아니라 CLASS로 부여할수도 있는데 
+            //ID는 중복안되고 CLASS는 중복될수 있으니(여러개존재) 클래스네임셀렉터 쓸땐 항상 인덱싱[]을 해줘야.
+            //찾은것중 위에서 몇번째..?[0]- 0번째
+            document.getElementById('alert').style.display='block';
+
+        }
+        function 비번알림창(){
+            document.getElementById('title').innerHTML='비번입력';
+            document.getElementById('alert').style.display='block';
+
+        }
+        
+    </script>
+</body>

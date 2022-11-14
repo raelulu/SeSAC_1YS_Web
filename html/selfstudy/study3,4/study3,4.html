@@ -21,7 +21,7 @@
 <body>
     
     <div class="alert-box" id="alert">알림창임
-        <button onclick="알림창닫기('none');">닫기</button>
+        <button onclick="알림창열기('none');">닫기</button>
     </div>
     <button onclick="알림창열기('block');">버튼</button>
 
@@ -82,17 +82,59 @@
 
         // 비슷한 함수가 많으면 그냥 가변적인 부분을 구멍뚫어봄.
 
-        알림창열기('block');
-        //혹은
-        알림창열기('none');
+        // 알림창열기('block');
+        // //혹은
+        // 알림창닫기('none');
         //처럼 각각 원하는 것들 구멍자리에 집어넣어서 다양한 기능을 실행가능.
 
        /*  이 구멍을 용어로 파라미터(인자,Argument)라 부른다. */
     /*  파라미터문법은 필수 문법은 아님. 함수 여러개 만들기 귀찮을 때 사용.
-        function도 마찬가지로 필수 문법이 아니다. 편의를 위해 쓰는 것일뿐 */
+        function도 마찬가지로 필수 문법이 아니다. 편의를 위해 쓰는 것일뿐 
+        파라미터작명은 아무렇게나 가능 */
 
     </script>
 
+
+
+<!--     <script>
+        // 파라미터 예시2  
+/* 
+        function plus(){
+            2 + 1
+        }
+
+        function plus2(){
+            2 + 2
+        }
+
+        function plus3(){
+            2 + 3
+        } */
+        //파라미터문법쓰면 굳이 여러개함수 만들필요없이 하나로 다해결.
+
+        function plus(구멍){
+            2+ 구멍
+        }
+
+        plus(1); //구멍자리에 1 넣어서 plus함수 안의 코드 실행해주셈.  2+1
+        plus(2);//2+2
+        plus(3);//2+3
+
+    </script>
+ -->
+
+ 
+
+ <script>
+
+    //파라미터는 여러개 가능
+       function 알림창열기(구멍, 구멍2){
+                document.getElementById(구멍2).style.display = 구멍;
+                  }
+
+    알림창열기('ㄴㅇㄹ','ㄴㅇㄹ');
+    --사용법알기!!!!!!! 이해!!!!!!!!!!!!!
+ </script>
 
 
 </body>

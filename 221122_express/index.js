@@ -46,7 +46,7 @@ app.get('/ejs', (req, res)=>{
         title: "index 페이지 입니다.",
         data: ["a", "b", "c"]
     });
-})//index.ejs안써도 됨. 그냥index만써도 알아서 찾아줌.
+})//index.ejs안써도 됨.확장자안쓰고 그냥index만써도 알아서 찾아줌.
 
 app.get("/form",(req, res)=>{
     res.render("form");

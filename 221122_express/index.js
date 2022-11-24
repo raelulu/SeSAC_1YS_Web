@@ -52,6 +52,7 @@ app.get("/form",(req, res)=>{
     res.render("form");
  })
  
+ 
 app.get("/getForm",(req, res)=>{
    console.log(req.query);
    res.send("get 요청 성공!");

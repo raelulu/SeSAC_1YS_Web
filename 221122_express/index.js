@@ -3,6 +3,7 @@ const app = express();
 const port = 8080;
 
 app.set('view engine', 'ejs');
+//ejs사용하기위한 설정.
 
 /* app.use("/public", express.static("static")); */
 //static이라는 실제 존재하는 폴더에 public이라는 경로로 접근할수 있도록 함.
@@ -20,7 +21,7 @@ app.use("/static", express.static("static"));
 //localhost:8080
 app.get('/', (req, res)=>{
     res.send("hello express");
-});  //res 서버가 클라이언트측에 보내는 응답.그래서 send라는 메소드를 사용하는것../ req는 클라이언트가 서버측에 보내는 요청.
+});  //res는 서버가 클라이언트측에 보내는 응답.그래서 send라는 메소드를 사용하는것../ req는 클라이언트가 서버측에 보내는 요청.
 //localhost:8080 들어가면 hello express나옴.
 
 
@@ -35,10 +36,12 @@ app.get('/test', (req, res)=>{
 
 app.use(express.urlencoded({extended: true})); // x-www-urlencoded 데이터해석.
 app.use(express.json());// json형태로 받아보겠다...json형태 :딕셔너리형태랑 비슷
-//{
+//{ 
 //   key:value
 //}배운 순서대로 코드논다고 이 두줄 코드 맨아래 놓으면안됨
-
+//클라이언트가 서버측으로 정보를 넘겨줄때 폼전송을 사용.
+//서버가 클라이언트에서 넘겨준 데이터를 받으려면
+//body-parser라는 모듈 라이브러리가 필요. 이때 필요한 설정 코드 두줄.
 
 //localhost:8080/ejs로 접속하겠다..
 app.get('/ejs', (req, res)=>{
@@ -51,7 +54,18 @@ app.get('/ejs', (req, res)=>{
 app.get("/form",(req, res)=>{
     res.render("form");
  })
- 
+
+app.get("/p1",(req, res)=>{
+    res.render("p1");
+ })
+
+app.get("/p2",(req, res)=>{
+    res.render("p2");
+ })
+
+app.get("/p3",(req, res)=>{
+    res.render("p3");
+ })
  
 app.get("/getForm",(req, res)=>{
    console.log(req.query);

@@ -10,6 +10,15 @@ app.get("/",function(req, res){
     res.render("index");
 })
 
+app.get("/p1",function(req, res){
+    res.render("p1");
+})
+
+app.get("/p2",function(req, res){
+    res.render("p2");
+})
+
+
 
 
 

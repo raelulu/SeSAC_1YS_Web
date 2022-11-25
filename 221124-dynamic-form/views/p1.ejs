@@ -18,15 +18,15 @@
             axios({
                 method: "get",
                 url: "/form",
-                params: {name: form.id.value},
+                params: {name: form.name.value},
             }).then(function(res){
                 // console.log(res);
                 alert("가입완료");
             })
         }
     </script>
-    <form action="/getForm" method="get"  id="form_info" > 
-        이름<input type="text" name="id" required>
+    <form action="/getForm" method="get" > 
+        이름<input type="text" name="name" required>
         <fieldset>
             <legend>성별</legend>
             <input type="radio" name="gender" value="남자" id="men" required> <label for="men">남자</label>
@@ -76,7 +76,8 @@
 
         <button  type="button", onclick="sendGet()">회원가입</button>
     </form>
-    
+   
+
 
 </body>
 </html>

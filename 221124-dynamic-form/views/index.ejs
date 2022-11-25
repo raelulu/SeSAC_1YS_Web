@@ -1,62 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.js" 
-    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
-    crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
-    <form id="form_info" method="post" > 
-        아이디:<input type="text" name="id" ><br>
-        비밀번호:<input type="password" name="password" ><br>
-
-        <button  type="button" onclick="fetchPost()">fetch Post로그인</button><br>
-        <button type="button" onclick="ajaxPost();">ajax Post 로그인</button><br>
-        <div id="result"></div>
     <script>
-        function fetchPost(){
+        function sendGet(){
             var form = document.getElementById("form_info");
-         fetch("/postform", {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(
-                {id1: form.id.value, pw1: form.password.value}),
-            }).then(function(response){
-                return response.json();
-            }).then(function(result){
-                console.log("fetchPost");
-                document.getElementById("result").innerHTML = result.msg;
-                });
-            }
-//fetch에서는 result.msg에서 msg가필요하고..
-        function ajaxPost(){
-            var form = document.getElementById("form_info");
-            $.ajax({
-                    url: '/postform',
-                    type: 'POST',
-                    data: {id1: form.id.value, pw1: form.password.value},
-                    success: function (data) {
-                        console.log("ajaxPost");
-                        document.querySelector("#result").innerHTML = data.msg;
-                    },
-                    error: function (error) {
-                        console.error(error);
-                    }
-                });
-            }
-            //ajax에서는 result.msg에서 msg가필요하고..
-
-
+            //form.name.value를 가져올수있음.
+            //form.age.value를 가져올수있음.
+            
+            axios({
+                method: "get",
+                url: "/form",
+                params: {name: form.name.value}
+            }).then(function(res){
+                // console.log(res);
+                alert(res.data);
+            })
+        }
     </script>
+    </head>
+  <body>
+    <button type="button" onclick="sendGet();">get전송</button>
+    <button type="button" onclick="sendPost();">post전송</button>
+    <form id="form_info">
+        <input type="text" name="name">
     </form>
-    
-
-</body>
+  </body>
 </html>

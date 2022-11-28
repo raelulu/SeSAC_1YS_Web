@@ -1,10 +1,6 @@
 실습 36. 파일 업로드- 동적
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
@@ -12,7 +8,6 @@
 
         <script>
             function  fileUpload(){
-                
                 var form = document.getElementById("form_info");  
                 const formData = new FormData(form);
               
@@ -35,16 +30,16 @@
         <form id="form_info"   enctype="multipart/form-data"> 
             <fieldset>
                 <legend>개인정보</legend>
-                아이디:<input type="text" name="id" id="id"><br>
+                아이디:<input type="text" name="id"><br>
                 비밀번호:<input type="password" name="pw" ><br>
-                이름:<input type="text" name="name" ><br>
-                나이:<input type="text" name="age" ><br>
+                이름:<input type="text" name="name"><br>
+                나이:<input type="number" name="age" ><br>
             </fieldset>
             <input type="file" name="userfile">
             <button type="reset">리셋</button>
             <button type="button"  onclick="fileUpload();">회원가입</button>
         </form>
-          <img src="" alt="">
+          <img>
     </body>
         
 

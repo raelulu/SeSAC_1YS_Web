@@ -9,7 +9,6 @@ const cnn = mysql.createConnection({
 
 cnn.query('select * from user', (err, result)=>{
     if (err) throw err;
-
     console.log(result);
 
 })

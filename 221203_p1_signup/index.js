@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = 8080;
 
 app.set('view engine', 'ejs');
 
@@ -9,8 +9,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 const router = require("./routes");
-//localhost:8000/visitor~~ 이렇게 다 들어오게 할수도..
-app.use('/visitor', router);
+app.use('/login', router);
 
 app.get('*', (req, res) => {
     res.send('주소가 존재하지 않습니다.');

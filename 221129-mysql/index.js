@@ -9,7 +9,7 @@ const cnn = mysql.createConnection({
     host:'localhost', 
     user: 'user',
     password: 'rhfosla',
-    database: 'SESAC_TEST'
+    database: 'sesac_test'
 })
 
 

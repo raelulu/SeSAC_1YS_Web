@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function edit(){
+            let form = document.querySelector("#userForm");
+            let data = { id : form.id.value , pwd : form.pw.value , name : form.name.value }
+            // 1. edit 버튼을 누르면 
+            // 2. input 값을 수정한다. => update query를 해서 결과
+            // method : select => get, insert => post, update => put, patch, delete
+            axios({
+                method : "patch",
+                url : "/user/profile/edit",
+                data : data,
+            }).then((res)=>{
+                if(res.data == true) {
+                    alert("수정 성공 되었습니다.!");
+                }
+            })
+        }
+        
+        function del(){
+            let form = document.querySelector("#userForm");
+            let data = { id : form.id.value , pwd : form.pw.value , name : form.name.value }
+            axios({
+                method : "delete",
+                url : "/user/profile/del",
+                data : data,
+            }).then((res)=>{
+                if(res.data == true) {
+                    alert("삭제되었습니다!");
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <form id="userForm">
+        <h1>Welcome</h1>
+        ID :<input type="text" id="id" name="id" value="<%=data.id%>"><br>   
+        Password :<input type="password" id="pw" name="pw" value="<%=data.password%>"> <br>    
+        Name :<input type="text"  id="name" name="name" value="<%=data.name%>"> <br> 
+        <button type="button" onclick="edit()">Edit</button>
+        <button type="button" onclick="del()">Delete</button>
+    </form>
+</body>
+</html>

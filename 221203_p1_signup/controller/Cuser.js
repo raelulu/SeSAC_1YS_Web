@@ -23,7 +23,7 @@ exports.signin = (req,res) => {
 
 // 로그인(sigin)확인 여부
 exports.signinChk = (req, res) => {
-    User.select(req.body, (result)=> {
+    User.select(req.body, (result)=> {                                                  
         if(result.length > 0) {
             res.send(true);
         }else {

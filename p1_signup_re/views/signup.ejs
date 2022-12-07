@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        function register(){
+            let form = document.querySelector('#userForm');
+            let data = { id : form.id.value, pwd: form.pw.value, name: form.name.value}
+
+            if(!form.id.value && !form.pw.value && !form.name.value){
+                alert("값을 입력해주세요");
+            }
+            axios({
+                method : "post",
+                url: "/user/signup",
+                data: data
+            }).then((res)=>{
+             location.href = "/user/signin";
+            })
+        }
+    </script>
+
+</head>
+<body>
+
+    <form id="userForm"></form>
+        <h1>Welcome</h1>
+        <!-- id는 클라이언트단! name은 서버단!에서사용 -->
+         ID: <input type="text" id="id" name="id"><br>
+         Password: <input type="password" id="pw" name="pw"><br>
+         Name: <input type="text" id="name" name="name"><br>
+        <button type="button" onclick="register()">Register</button>
+        <a href="">Login</a>
+    </form>
+    
+</body>
+</html>

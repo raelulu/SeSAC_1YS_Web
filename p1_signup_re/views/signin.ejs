@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function signin(){
+            let id= document.querySelector("#id");
+            let pw= document.querySelector("#pw");
+            let form = document.getElementById("userForm");
+         
+            // 1. 선택자 지정
+            // 2. 선택자를 이용해서 if문 안에 조건 걸기 
+            // 3. alert("빈칸을 입력하세요");
+            if( !id.value && !pw.value){
+                alert("빈칸을 입력하세요");
+            }
+            axios({
+                method:"post",
+                url:"/user/signin",
+                data:{id : id.value , pwd : pw.value}
+            }).then((res)=>{
+                // console.log(res.data);/
+                if(res.data == true){
+                    alert("로그인 접속 성공");
+                    // 페이지이동("/user/profile")
+                    // form.name=id.value = id.value;  name이 id인 것의 value
+                    form.id.value = id.value;
+                    form.submit();
+                    // window.location.href = "http://localhost:8080";
+                }else {
+                    alert("로그인 접속 실패");
+                    id.value = "";
+                    pw.value = "";
+                }
+            })
+    }
+    
+    </script>
+</head>
+<body>
+</body>
+    <!--form 태그 안에 name이 꼭 있어야 함(name은 서버단에 넘겨줌)-->
+    <form id="userForm" action="/user/profile" method="POST">
+        <input type="hidden" name="id" id="hiddenId">
+    </form>
+    <h1>Welcome</h1>
+    ID :<input type="text" id="id" name="id"> <br>   
+    Password :<input type="password" id="pw" name="pw"> <br>    
+
+    <button onclick="signin()">Login</button>
+     <a href="">Register</a>
+</body>
+</html>

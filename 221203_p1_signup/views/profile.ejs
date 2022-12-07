@@ -22,8 +22,21 @@
                     alert("수정 성공 되었습니다.!");
                 }
             })
-           
         }
+        function del(){
+            let form = document.querySelector("#userForm");
+            let data = { id : form.id.value , pwd : form.pw.value , name : form.name.value }
+            axios({
+                method : "delete",
+                url : "/user/profile/del",
+                data : data,
+            }).then((res)=>{
+                if(res.data == true) {
+                    alert("삭제되었습니다!");
+                }
+            })
+        }
+
     </script>
 </head>
 <body>

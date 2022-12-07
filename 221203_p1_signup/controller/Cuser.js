@@ -48,3 +48,10 @@ exports.edit = (req,res) => {
         res.send(true);
     })
 }
+
+// 스스로 delete 삭제 연습
+exports.del = (req,res) => {
+    User.delete(req.body, ()=>{
+        res.send(true);
+    })
+}

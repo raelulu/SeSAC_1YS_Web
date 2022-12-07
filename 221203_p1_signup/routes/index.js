@@ -15,4 +15,10 @@ router.post("/profile", controller.profile);
 // profile 수정
 router.patch("/profile/edit", controller.edit);
 
+
+
+
+//스스로 삭제연습
+router.delete("/profile/del", controller.del);
+
 module.exports = router;

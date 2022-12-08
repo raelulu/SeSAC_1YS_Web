@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+    const login_O = document.getElementById("log_in");
+    const signin_O = document.getElementById("signin-box");
+    const logout_O = document.getElementById("logout-box")
+        login_O.style.display = "none";
+        logout_O.style.display = "none";
+        async function login() {
+    const response = await axios({
+        method: "post",
+        url: "/login",
+        data: {
+          id: signin_O.id.value,
+          pw: signin_O.pw.value,
+        },
+      });
+      if (response.data === "ok") {
+        alert("로그인 성공");
+        logout_O.style.display = "none";
+        signin_O.style.display = "none";
+        login_O.style.display = "block";
+      } else {
+        alert("로그인 실패");
+      }
+    }
+    async function logout() {
+      await axios({
+        method: "get",
+        url: "/logout",
+      });
+      alert("로그아웃 성공");
+      logout_O.style.display = "block";
+      signin_O.style.display = "none";
+      login_O.style.display = "none";
+    }
+  </script>
+</head>
+<body>
+ 
+    <form id="userForm">
+        ID :<input type="text" id="id" name="id"> <br>   
+        Password :<input type="password" id="pw" name="pw"> <br>    
+        <button>회원가입</button>
+        <button onclick="login()">Login</button>
+    </form> 
+</body>
+</html>

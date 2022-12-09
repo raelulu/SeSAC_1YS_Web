@@ -18,7 +18,6 @@ app.use(session({
     // secure: true 보안서버에서만 작동//''위아래 자유. 써도되고 안써도되고
 }));
 
-
 app.get("/main",(req, res)=>{
     res.render("main");
  });
@@ -48,13 +47,6 @@ app.post("/login", (req,res)=>{
     req.session.user = "id";//req클라이언트 요청에대한것.. /클라이언트마다 고유의 세션아이디가지고있음./클라이언트 타고온다 res쓰면 동작안될것.
     res.send("세션 생성 성공");
 })
-
-
-
-
-
-
-
 
 
 app.listen(port, () => {

@@ -34,6 +34,37 @@ app.get("/", (req,res)=>{
 
 const user = {id : "a", pw : "1"};
 
+//session과제
+app.get("/", (req,rse)=>{
+    console.log(req.session.user);
+    if(req.session.user) res.render("index", {isLogin: true, id: req.session.user});
+    else res.render("index", {isLogin: false});
+})
+
+app.get("/login", (req, res)=>{
+    res.render("login");
+})
+
+app.post("/login", (req, res)=>{
+    if(req.body.id == user.id && req.body.pw == user.pw) {
+        req.session.user = req.body.id;
+        res.send(true);
+    }else {
+        res.send(false);
+    }
+})
+
+app.get("/logout", (req, res)=>{
+    req.session.destroy(function(err){
+        if(err) throw err;
+
+        res.redirect("/");
+    })
+})
+//session과제
+
+
+
 app.post("/login", (req,res)=>{
     //cookie = {   }처럼 session도 마찬가지.
     //req.session = {   }

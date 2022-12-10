@@ -1,24 +1,11 @@
 var express = require("express");
-var controller = require("../controller/Cuser");
+var controller = require("../controller/Clogin");
 const router = express.Router();
 
-// 회원가입 렌더
-router.get("/user", controller.user);
-router.post("/signup", controller.signup);
 
-// 로그인페이지 렌더
-router.get("/signin", controller.signin);
-router.post("/signin", controller.signinChk);
-
-// 마이페이지(profile) 값 넣어서 보여주기
-router.post("/profile", controller.profile);
-// profile 수정
-router.patch("/profile/edit", controller.edit);
+router.get("/login", controller.login);
 
 
 
-
-//스스로 삭제연습
-router.delete("/profile/del", controller.del);
 
 module.exports = router;

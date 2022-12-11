@@ -22,7 +22,7 @@ app.get("/main",(req, res)=>{
     res.render("main");
  });
 
- app.get("/signin",(req, res)=>{
+app.get("/signin",(req, res)=>{
     res.render("signin");
  });
 
@@ -46,7 +46,7 @@ app.get("/", (req,res)=>{
 
 const user = {id : "a", pw : "1"};
 
-//아래부터~~~~~~세션과제~~~~~~
+//아래부터~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~세션과제~~~~~~
 //2번. index.ejs를 렌더하는 라우터를 만든다.
 //app.get("/"), (req,res)=>{
 //    res.render("index");
@@ -106,7 +106,7 @@ app.get("/logout", (req, res)=>{
         res.redirect("/");
     })
 })
-//위까지~~~~~~세션과제~~~~~~
+//위까지~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~세션과제~~~~~~
 
 
 

@@ -4,20 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+         10번. axios CDN불러오기
+    -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
+        <!-- 
+            6번. form태그 만들고. 
+            안에다가 id,pw의 input만들고 input의 type과 name입력.
+            로그인 버튼만들기. 버튼엔 type을 button으로하기. type안쓰거나 submit하면 일반 폼전송으로되니까 주의!!
+            그다음, onclick씀 login()함수만들어서.
+            그다음, 나중에 form 선택,사용하기위해 form id도 지정해주기.
+        -->
     <form id="form_login">
         <input type="text" name="id">
         <input type="text" name="pw">
         <button type="button" onclick="login()">로그인</button>
     </form>
     <script>
+        // 7번. 로그인버튼 눌렀을때 실행시킬 함수 만들기.
+        // 그럼.예상...폼태그를 선택하면서 안에 있는 값을 axios요청하겠구나...
         function login(){
+            //8번. 폼태그선택.
             var form = document.getElementById("form_login");
-
-            axios({
+            //9번. axios함수를 이용해서 동적폼 전송할것. axios 외부라이브러리니까 axios CDN 불러온다.
+            //11번. -> 그다음 뭘해야? id랑 password받아서 서버로 보내야함. id랑 password가 저장된 곳은 프론트단이 아님. 백단으로 보내야함.
+            //보낼껀데 뭐라고 보낼꺼냐면, method일단 정의해줘야. 어떤 http method를 쓸껀지. 저는 post를 쓸것.
+            //12번. url적어줄것. 저는 login이란 url로 보낼것. (url은 같아도 method다르면상관없다! get, post는 url같아도됨. get요청에 따른 url, post요청에 따른 url따로 분리되니까 상관없다)
+            //13번. url보낼때 같이 보내야함. 뭐를? 내가 입력한 정보를. input에 입력된 정보를 같이보내야.
+            //  id : form.id.value,  pw : form.pw.value
+            //14번. 이렇게 axios요청만하면 끝날게 아니라. 내가 요청하면 그결과를 받아와야. 받아와서 이것에 대한 처리를 해야함. 콘솔로그에 찍던지.
+            //뭘할지 모르겠으면 .then((res)=>{console.log(res.data);}
+            //15번. 서버에 응답 받은다음에 보내줘야함. 응답하기위해 뭘 먼저해야할까? 라우터 먼저 만들어야함.index.js로 간다.
+        //     axios({
+        //         method: "post",
+        //         url: "/login",
+        //         data: {
+        //             id : form.id.value,
+        //             pw : form.pw.value
+        //         }
+        //     }).then((res)=>{
+        //         console.log(res.data);
+        //     })
+        // }
+//26번. 로그인 성공하면 바로 메인페이지로 이동시키기. 일반사용자는 콘솔로 보지않기때문에 alert창 띄어줌. 
+//alert("로그인 성공")인데 무조건 성공시키지 않잖아. if문으로 감싼다.
+//로그인 성공하면 메인페이지로 강제이동시키고싶음. window.location.href = "/";
+//로그인 실패하면 id,password를 다 지울것. 사용자가 다시 입력할수 있게끔.  form.reset();  --form태그 이런식으로 선택하고 reset메소드 실행시키면 폼태그안에있는 인풋 안에대한 밸류값이 다 사라짐. 이런 함수도있다..
+        axios({
                 method: "post",
                 url: "/login",
                 data: {
@@ -34,7 +70,7 @@
                     form.reset();
                 }
                 console.log(res.data);
-            })
+                 })
         }
     </script>
 </body>

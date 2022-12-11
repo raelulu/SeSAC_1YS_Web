@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-    crossorigin="anonymous"
-  />
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <% if( !isLogin ) {%>
-        <a href="/login">로그인</a>
-        <a href="/register">회원가입</a>
-    <% } else { %>
-        <a href="/logout">로그아웃</a>
-    <% } %>
-</body>
+    <!-- axios CDN불러오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- 부트스트랩css CDN불러오기 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    
+  </head>
+  <body>
+        <!-- ~~~~~~세션과제시작~~~~~~
+        1번. 로그인페이지, 회원가입페이지가 있는 UI들을 만들어두기(로그인,회언가입a태그)-> index.ejs를 렌더하는 라우터만들어줘야.index.js에다가
+        -->
+           
+    <!-- 23번. isLogin이 아니라면 로그인,회원가입 보여준다, isLogin이 맞다면 로그아웃 보여준다는 문법 -->
+        <% if( !isLogin ) { %>
+            <a href="/login">로그인</a>
+            <a href="/register">회원가입</a>
+        <% } else { %>
+            <div><%=id%>님 환영합니다.</div>
+            <a href="logout">로그아웃</a>
+        <% } %>
+
+    <!-- 24번. 다음단계.**님환영합니다를 로그인이 되어있으면 보여줄것.보여주려면 이사람의 정보를 보내줘야.index.js로 이동  -->
+
+    <!-- 부트스트랩js CDN불러오기 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
 </html>

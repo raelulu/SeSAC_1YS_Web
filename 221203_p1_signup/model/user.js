@@ -60,11 +60,11 @@ exports.update = (data, cb)  => {
     })
 }
 
-exports.delete = (data, cb) => {
-    let sql = `DELETE FROM member WHERE id="${data.id}";`
-    cnn.query(sql, (err, result) => {
-        if(err) throw err;
-        console.log("delete result: ", result);
-        cb();
-    })
-}
+// exports.delete = (data, cb) => {
+//     let sql = `DELETE FROM member WHERE id="${data.id}";`
+//     cnn.query(sql, (err, result) => {
+//         if(err) throw err;
+//         console.log("delete result: ", result);
+//         cb();
+//     })
+// }

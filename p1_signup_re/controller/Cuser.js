@@ -1,6 +1,5 @@
 const User = require("../model/user")
 
-
 //회원가입폼 보여주기
 exports.user = (req,res) => {
     res.render("signup");

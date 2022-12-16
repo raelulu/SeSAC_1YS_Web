@@ -1,19 +1,12 @@
-const main = require('../model/index');
-
-exports.main = (req,res)=>{
-    res.render("main");
-}
-
-exports.login = (req, res) => {
-    res.render('login');
-}
-
-exports.login_main = (req, res) => {
-    
-}const main = require('../model/index');
+const { User } = require('../model/User');
 
 exports.main = (req, res) => {
   res.render('main');
+};
+
+//회원등록화면.
+exports.join = (req, res) => {
+  res.render('join');
 };
 
 /*
@@ -41,39 +34,16 @@ exports.mainC = (req, res) => {
 };
 
 
-// 로그인(signin)페이지 이동
-exports.login = (req,res) => {
-  res.render("login");
-}
-
-// 로그인 확인 여부
-exports.loginChk = (req, res) => {
-  main.select(req.body, (result)=> {
-      if(result.length > 0) {
-          res.send(true);
-      }else {
-          res.send(false);
-      }
-  })
-}
-
-// 회원 가입 폼 보여주기
-exports.user = (req, res) => {
-  res.render("signup");
-}
-
 
 // 회원 등록
-exports.join = (req, res) => {
-  main.insert(req.body, ()=>{
-      res.send(true);
-  })
-}
+// exports.join = async( req,res ) => {
+//   let data = {
+//     id: req.body.id,
+//     password: req.body.pw,
+//     name: req.body.name
+//   };
+//   let result = await User.create(data);
+//     console.log(result.id);
+//     res.send(result.id);
+// };
 
-//로그인 성공 후 메인페이지렌더
-exports.main = (req, res) => {
-  console.log(req.body);
-  main.selectOne(req.body.id, (result)=>{
-      res.render("main", { data : result });
-  })
-}

@@ -9,10 +9,14 @@
 
 </head>
 <body>
+    <form action="/mypage" id="form_mypage" method="post">
+        <input type="hidden" name="id" >
+    </form>
     <form action="" id="login_form">
         <input type="text" name="id" id="id"  placeholder="id">
         <input type="password" name="pw" id="pw" placeholder="password">
         <button type="button" onclick="login()">로그인</button>
+            </button>
     </form>
     
     <script>
@@ -37,9 +41,10 @@
                 if(data == true){
                     console.log(data)
                     alert("로그인 접속 성공");
-                    //  form.id.value = id.value;
-                    //  form.submit();
-                    location.href = "/"
+                    var form_mypage =document.querySelector('#form_mypage')
+                        form_mypage.id.value = id.value;
+                        form_mypage.submit();
+                    location.href = "/mypage"
                      
                 }else {
                     alert("로그인 접속 실패");

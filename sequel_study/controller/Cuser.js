@@ -35,3 +35,15 @@ exports.loginChk = (req, res) =>{
         }
     })
 }
+
+exports.mypage= (req, res)=>{
+    res.render('mypage')
+}
+
+
+exports.delete =async (req, res) => {
+    await User.destroy({
+        where : {id : req.body.id}
+    })
+    res.send(true);
+}

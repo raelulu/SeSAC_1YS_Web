@@ -7,7 +7,7 @@ const User = (Sequelize, DataTypes) => {
           allowNull: false,
           primaryKey: true,
         },
-        password: {
+        pw: {
           type: DataTypes.STRING(20),
           allowNull: false,
         },

@@ -11,9 +11,27 @@ exports.signup= (req, res)=>{
 exports.signupPost= async(req, res)=>{
     let data = {
         id: req.body.id,
-        password: req.body.password,
+        pw: req.body.pw,
         name: req.body.name
     }
     let result = await User.create(data);
-    res.send(true)
+    res.send(true);
+}
+
+exports.login= (req, res)=>{
+    res.render('login')
+}
+
+exports.loginChk = (req, res) =>{
+    User.findOne({
+        where: {id: req.body.id, pw: req.body.pw},
+    }).then((result)=>{
+        if(result){
+            res.send(true);
+            console.log(result.id);
+        }
+        else {
+            res.send(false);
+        }
+    })
 }

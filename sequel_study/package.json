@@ -1,6 +1,7 @@
 {
-  "name": "zerowave_practice",
+  "name": "sequel_study",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.27.0",
     "sequelize-cli": "^6.5.2"
-  },
-  "description": ""
+  }
 }

@@ -14,5 +14,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server open: ${port}`);
+  console.log(`server open: ${port}`); //${}안은변수
 });

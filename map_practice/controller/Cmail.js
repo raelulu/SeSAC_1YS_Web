@@ -7,11 +7,11 @@ const nodemailer = require("nodemailer");
 //     let transporter = nodemailer.createTransport({
 //       service: "gmail",
 //       host: "smtp.gmail.com", // gmail server 사용
-//       port: 587,
+//       port: ,
 //       secure: false,
 //       auth: {
-//         user: `zerowave0000@gmail.com`, //`process.env.zerowave0000@gmail.com` 보내는 사람의 구글계정 메일
-//         pass: `vknspasovmzgyzuf`, //`process.env.vknspasovmzgyzuf` 보내는 사람의 구글계정 비밀번호 (또는 생성한 앱 비밀번호)
+//         user: ``, // 보내는 사람의 구글계정 메일
+//         pass: ``, // 보내는 사람의 구글계정 비밀번호 (또는 생성한 앱 비밀번호)
 //       },
 //     });
 

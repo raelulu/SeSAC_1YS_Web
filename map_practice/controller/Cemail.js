@@ -7,15 +7,15 @@ exports.email = (req, res) => {
     service: "gmail",
     auth: {
       user: "zerowave0000@gmail.com", // gmail 계정 아이디를 입력
-      pass: "", // gmail 계정의 비밀번호를 입력
+      pass: "vknspasovmzgyzuf", // gmail 계정의 비밀번호를 입력
     },
   });
 
   let mailOptions = {
     from: "zerowave0000@gmail.com", // 발송 메일 주소 (위에서 작성한 gmail 계정 아이디)
-    to: email, // 수신 메일 주소
-    subject: "Sending Email using Node.js", // 제목
-    text: "That was easy!", // 내용
+    to: "raelulu23@gmail.com", // 수신 메일 주소
+    subject: "임시 비밀번호 발송", // 제목
+    text: "T1234", // 내용
   };
 
   transporter.sendMail(mailOptions, function (error, info) {

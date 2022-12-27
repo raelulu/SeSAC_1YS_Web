@@ -7,7 +7,7 @@ exports.email = (req, res) => {
     service: "gmail",
     auth: {
       user: "zerowave0000@gmail.com", // gmail 계정 아이디를 입력
-      pass: "vknspasovmzgyzuf", // gmail 계정의 비밀번호를 입력
+      pass: "", // gmail 계정의 비밀번호를 입력
     },
   });
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypage</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button type="button">
+        logout
+    </button>
+
+    <form action="" id="del_form">
+        <input type="text" name="id" placeholder="id" ><br>
+        <input type="password" name="pw"  placeholder="password" ><br>
+        <button type="button"  id="del" onclick="myp()">
+            탈퇴하기
+        </button>
+    </form>
+    
+    <script>
+        function myp(){
+            var form = document.querySelector('#del_form');
+            var user = {
+                id : form.id.value    
+            }
+            axios({
+                method: 'delete',
+                url: '/delete', 
+                data:  user
+            }).then((res)=>{
+                if(res.data){
+                    alert('탈퇴성공');
+                    location.href="/";
+                }else{
+                    alert('실패하였습니다');
+                
+                }
+            })
+        }
+
+    </script>
+    
+</body>
+</html>

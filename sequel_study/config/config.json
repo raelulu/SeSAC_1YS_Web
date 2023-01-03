@@ -1,0 +1,16 @@
+{
+    "development": {
+      "host": "localhost",
+      "database": "zero_wave",
+      "username": "user",
+      "password": "rhfosla",
+      "dialect": "mysql"
+    },
+    "production": {
+      "host": "localhost",
+      "database": "zero_wave",
+      "username": "user",
+      "password": "rhfosla",
+      "dialect": "mysql"
+    }
+  }

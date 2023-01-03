@@ -23,7 +23,7 @@ exports.signin = (req,res) => {
 
 // 로그인(sigin)확인 여부
 exports.signinChk = (req, res) => {
-    User.select(req.body, (result)=> {                                                  
+    User.select(req.body, (result)=> {
         if(result.length > 0) {
             res.send(true);
         }else {
@@ -45,13 +45,6 @@ exports.profile = (req, res) => {
 // profile 수정
 exports.edit = (req,res) => {
     User.update(req.body, ()=>{
-        res.send(true);
-    })
-}
-
-// 스스로 delete 삭제 연습
-exports.del = (req,res) => {
-    User.delete(req.body, ()=>{
         res.send(true);
     })
 }

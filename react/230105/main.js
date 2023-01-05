@@ -10,3 +10,4 @@ const copyObj = { ...obj, lupy: 'lupy' };
 
 console.log(obj);
 console.log(copyObj);
+//ㅇ러ㅏ니러ㅏ

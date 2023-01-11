@@ -6,6 +6,7 @@ export default function P4() {
   return (
     <div>
        { a>b  && <h2>a가 b보다 큽니다</h2> } 
+      
     </div>
   )
 }

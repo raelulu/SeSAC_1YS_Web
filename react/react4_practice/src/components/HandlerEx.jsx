@@ -9,10 +9,9 @@ export default class HandlerEx extends Component {
       }
       
   render() {
-    const { value } = this.state;
     return (
       <div>
-        <span>{value}</span>
+        <span>{this.state.value}</span>
         <button onClick={() => this.setState({ value: 'Goodbye World!' })}>클릭</button>
       </div>    
     )

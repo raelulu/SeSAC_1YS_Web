@@ -33,7 +33,7 @@ function App() {
         price="13,500원"
         type="자기계발서"
       />
-      <Pprops3 text="App 컴포넌트에서 넘겨준 text props입니다." />
+      <Pprops3 text="App 컴포넌트에서 넘겨준 text props입니다." valid="콘솔 띄우기 성공! "/>
       <Pstate1 />
       <Pstate2 />
       <HandlerEx />

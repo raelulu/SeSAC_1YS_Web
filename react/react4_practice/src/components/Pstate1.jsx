@@ -17,5 +17,5 @@ export default class Pstate1 extends Component {
    
       </div>
     )
-  }
+  }   
 }

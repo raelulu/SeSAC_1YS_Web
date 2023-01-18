@@ -5,6 +5,7 @@ import Comparing from './components/Comparing';
 import ConditoinalRender from './components/ConditoinalRender';
 import ExConditional from './components/ExConditional';
 import ExShow from './components/ExShow';
+import RandomQuiz from './components/RandomQuiz';
 import ReactFragment from './components/ReactFragment';
 import RefDom from './components/RefDom';
 import ShowTimer from './components/ShowTimer';
@@ -21,6 +22,7 @@ function App() {
       <ConditoinalRender />
       <ReactFragment />
       <Comparing />
+      <RandomQuiz />
       <ColorInput />
       <RefDom />
       <ChangeFocus />

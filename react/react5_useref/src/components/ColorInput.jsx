@@ -1,19 +1,18 @@
-import React from 'react'
-import { useRef } from 'react'
+import React from 'react';
+import { useRef } from 'react';
 
 export default function ColorInput() {
-    const inputColor = useRef();
-    const divColor = useRef();
+  const inputEl = useRef();
+  const backColor = useRef();
 
-    const changeColor = () => {
-        divColor.current.style.backgroundColor = inputColor.current.value;
-    };
-    
+  const changeColor = () => {
+    backColor.current.style.backgroundColor = inputEl.current.value;
+  };
   return (
-    <div ref={divColor} >
-        <input ref={inputColor}/>
-        <br />
-        <button onClick={changeColor}>색 적용</button>
+    <div ref={backColor}>
+      <input ref={inputEl} type="text" />
+      <br />
+      <button onClick={changeColor}>색 적용</button>
     </div>
-  )
+  );
 }

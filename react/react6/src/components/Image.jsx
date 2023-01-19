@@ -1,5 +1,5 @@
 import React from 'react'
-import catImg from '../cat/jpg'
+import catImg from '../cat.jpg'
 
 export default function Image() {
   return (

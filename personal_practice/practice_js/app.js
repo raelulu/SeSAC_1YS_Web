@@ -42,6 +42,7 @@ if (password.length >= 6) {
   //Password cannot include space
   if (password.indexOf("") === -1) {
     console.log("Valid Password!");
+    //이부분 왜 안먹히는지 찾기
   } else {
     console.log("Password cannot conntain spaces!");
   }

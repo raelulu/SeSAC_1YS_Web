@@ -29,12 +29,12 @@
 //console.log(msg)
 //console.log(i)
 
-function bankRobbery(){
-    const heroes = ['Spiderman', 'Wolverine', 'Black Panther', 'Batwoman']
-    function cryForHelp(){
-        for(let hero of heroes){
-            console.log(`PLEASE HELP US, ${here.toUpperCase()}`)
-        }
+function bankRobbery() {
+  const heroes = ["Spiderman", "Wolverine", "Black Panther", "Batwoman"];
+  function cryForHelp() {
+    for (let hero of heroes) {
+      console.log(`PLEASE HELP US, ${hero.toUpperCase()}`);
     }
-    cryForHelp();
+  }
+  cryForHelp();
 }

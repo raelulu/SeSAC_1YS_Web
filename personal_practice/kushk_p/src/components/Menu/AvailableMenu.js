@@ -28,6 +28,7 @@ const DUMMY_MENU = [
     price: 3500,
   },
 ];
+//데이터베이스에서 데이터 가져오기
 
 const AvailableMenu = () => {
   const menuList = DUMMY_MENU.map((menu) => (

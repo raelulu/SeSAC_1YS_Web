@@ -1,35 +1,42 @@
 import { useContext } from "react";
 
 import Modal from "../UI/Modal";
-import CartItem from './CartItem';
+import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
-import CartContext from '../../store/cart-context'
+import CartContext from "../../store/cart-context";
 
 const Cart = (props) => {
-  const cartCtx =  useContext(CartContext);
+  const cartCtx = useContext(CartContext);
 
   const totalAmount = `${cartCtx.totalAmount}`;
-  const hasItems =  cartCtx.items.length > 0;
+  const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
 
   const cartItemAddHandler = (item) => {
-    cartCtx.addItem({...item, amount: 1});
+    cartCtx.addItem({ ...item, amount: 1 });
   };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartCtx.items.map((item) => (
-        <CartItem key={item.id} name={item.name} amount={item.amount} price={item.price} onRemove={cartItemRemoveHandler.bind(null, item.id)} onAdd={cartItemAddHandler.bind(null, item)}/>
-      /* 리스트이기 때문에 키를 전달해야함 */
-      /* 또 onRemove프롭추가 CartItem컴포넌트에서 기대하는 이름이니까 */
-      /* onRemove에게 cartItemRemoveHandler에 대한 포인터를 전달 */
-      /* onAdd프롭추가도 마찬가지로 반복 */
-      /* 이제 두함수에 대해 bind호출하고, null과 item.id를 바인드함. 이렇게 하면 추가되거나 삭제된 항목의 id가 remove핸들러로 전달됨 */
-      /* bind는 향후에 함수가 실행될때 받을 인수를 미리 구성할수있음..즉, 이두함수는 item.id를 받거나 item처럼 항목 자체를 받는 다는 것. */
-      ))} 
+        <CartItem
+          key={item.id}
+          name={item.name}
+          amount={item.amount}
+          price={item.price}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onAdd={cartItemAddHandler.bind(null, item)}
+        />
+        /* 리스트이기 때문에 키를 전달해야함 */
+        /* 또 onRemove프롭추가 CartItem컴포넌트에서 기대하는 이름이니까 */
+        /* onRemove에게 cartItemRemoveHandler에 대한 포인터를 전달 */
+        /* onAdd프롭추가도 마찬가지로 반복 */
+        /* 이제 두함수에 대해 bind호출하고, null과 item.id를 바인드함. 이렇게 하면 추가되거나 삭제된 항목의 id가 remove핸들러로 전달됨 */
+        /* bind는 향후에 함수가 실행될때 받을 인수를 미리 구성할수있음..즉, 이두함수는 item.id를 받거나 item처럼 항목 자체를 받는 다는 것. */
+      ))}
     </ul>
   );
 
@@ -37,8 +44,8 @@ const Cart = (props) => {
     <Modal onClose={props.onClose}>
       {cartItems}
       <div className={classes.total}>
-        <span>Total Amount</span>
-        <span>{totalAmount}</span>
+        <span>총 주문금액</span>
+        <span>{totalAmount}원</span>
       </div>
       <div className={classes.actions}>
         <button className={classes["button--alt"]} onClick={props.onClose}>

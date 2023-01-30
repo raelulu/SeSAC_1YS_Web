@@ -34,7 +34,7 @@ const MenuItemForm = (props) => {
       <Input
         ref={amountInputRef}
         //ref를 통해 인풋에 접근가능
-        label="Amount"
+        label="수량"
         input={{
           id: "amount_" + props.id,
           type: "number",

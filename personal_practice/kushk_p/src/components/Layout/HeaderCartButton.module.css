@@ -2,19 +2,20 @@
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #4d1601;
-  color:white;
-  padding: 0.75rem 1rem;
+  background-color: #541300;
+  color: white;
+  padding: 0.55rem 0.3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-radius: 25px;
+  border-radius: 15px;
   font-weight: bold;
 }
 
 .button:hover,
 .button:active {
-  background-color: #2c0d00;
+  background-color: #420100;
+  color: white;
 }
 
 .icon {
@@ -24,16 +25,18 @@
 }
 
 .badge {
-  background-color: #b94517;
-  padding: 0.25rem 1rem;
+  background-color: white;
+  color: #541300;
+  padding: 0.25rem 0.7rem;
   border-radius: 20px;
-  margin-left: 1rem;
+  margin-left: 0.7rem;
   font-weight: bold;
 }
 
 .button:hover .badge,
 .button:active .badge {
-  background-color: #2c0d00;
+  background-color: white;
+  color: #420100;
 }
 
 .bump {

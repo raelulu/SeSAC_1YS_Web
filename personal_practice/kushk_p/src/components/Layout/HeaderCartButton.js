@@ -11,14 +11,14 @@ const HeaderCartButton = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  useContext(CartContext);
+  // useContext(CartContext);
 
   return (
     <button className={classes.button} onClick={props.onClick}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
-      <span>Your Cart</span>
+      <span>장바구니</span>
       <span className={classes.badge}>{numberOfCartItems}</span>
     </button>
   );

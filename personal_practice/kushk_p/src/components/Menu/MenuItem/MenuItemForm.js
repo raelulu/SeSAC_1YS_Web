@@ -36,7 +36,7 @@ const MenuItemForm = (props) => {
         //ref를 통해 인풋에 접근가능
         label="Amount"
         input={{
-          id: "amount",
+          id: "amount_" + props.id,
           type: "number",
           min: "1",
           max: "5",
@@ -44,7 +44,7 @@ const MenuItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button>+Add</button>
+      <button>주문하기</button>
       {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
     </form>
   );

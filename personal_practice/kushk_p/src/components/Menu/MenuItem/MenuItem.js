@@ -22,10 +22,10 @@ const MenuItem = (props) => {
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>{props.price}</div>
+        <div className={classes.price}>{price}</div>
       </div>
       <div>
-        <MenuItemForm onAddToCart={addToCartHandler} />
+        <MenuItemForm id={props.id} onAddToCart={addToCartHandler} />
       </div>
     </li>
   );

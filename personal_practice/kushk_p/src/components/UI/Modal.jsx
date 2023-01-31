@@ -27,6 +27,7 @@ const Modal = (props) => {
         <ModalOverlay>{props.children}</ModalOverlay>,
         portalElement
       )}
+      {/* ReactDOM.createPortal 포털생성메소드고, 2개의 인수필요. 무엇을 포털할지,어디로 포털할지 */}
     </Fragment>
   );
 };

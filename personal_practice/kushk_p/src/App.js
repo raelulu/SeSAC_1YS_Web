@@ -4,6 +4,7 @@ import "./App.css";
 import Coffee from "./components/Menu/Coffee";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
+import Main from "./components/Menu/Main";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       <Header onShowCart={showCartHandler} />
       <main>
         <Coffee />
+        <Main />
       </main>
     </CartProvider>
   );

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+</head>
+<body>
+<script>
+function greet(firstName, lastName) {
+    console.log(`Hey there, ${firstName} ${lastName[0]}.`);
+    }  
+
+function repeat(str, numTimes){
+    let result = "";
+    for(let i = 0; i < numTimes; i++){
+        result += str;
+    }
+    console.log(result);
+}
+
+function add(x,y){
+ if(typeof x !== 'number'|| typeof y !==  'number'){
+    return false;
+ }
+ return x + y;
+ 
+}
+
+
+
+</script>    
+</body>
+</html>

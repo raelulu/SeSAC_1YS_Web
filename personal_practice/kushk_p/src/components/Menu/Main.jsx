@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import First from './First';
+import AvailableMenu from './AvailableMenu';
 import Second from './Second';
 
 const Main = () => {
@@ -12,20 +12,19 @@ const Main = () => {
   };
 
   const selectComponent = {
-    first: <First />,
+    first: <AvailableMenu />,
     second: <Second />,
 
   };
 
-  console.log(content);
 
   return (
     <div>
         {MAIN_DATA.map(data => {
-          return (
+          return (          
             <Button onClick={handleClickButton} name={data.name} key={data.id}>
               {data.text}
-            </Button>
+            </Button>     
           );
         })}
       {content && <Content>{selectComponent[content]}</Content>}
@@ -35,18 +34,20 @@ const Main = () => {
 
 export default Main;
 
-
+//버튼 css수정하기
 const Button = styled.button`
   padding: 1rem 2rem;
   margin-right: 1rem;
+  margin-top: 50px;
   color: #111111;
   background-color: #eeeeee;
-  border-radius: 2rem;
+  border-radius: 1rem;
 `;
 
 const Content = styled.div`
+  margin-top: 30px;
   width: 100%;
-  height: 100%;
+  height: 50%;
 `;
 
 export const MAIN_DATA = [

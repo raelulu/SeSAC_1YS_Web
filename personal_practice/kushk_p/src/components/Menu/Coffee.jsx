@@ -6,7 +6,6 @@ const Coffee = () => {
   return (
     <Fragment>
       <MenuSummary />
-      <AvailableMenu />
     </Fragment>
   );
 };

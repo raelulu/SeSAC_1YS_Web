@@ -10,6 +10,7 @@ function App() {
     "카페추천",
   ]);
   let [따봉, 따봉변경] = useState(0);
+  let [modal, setModal] = useState(false); //UI의 현재상태를 state로 저장
 
   return (
     <div className="App">
@@ -23,8 +24,7 @@ function App() {
           글제목변경(copy);
         }}
       >
-        {" "}
-        정렬버튼{" "}
+        정렬버튼
       </button>
 
       <button
@@ -56,11 +56,17 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{글제목[2]}</h4>
+        <h4
+          onClick={() => {
+            setModal(!modal);
+          }}
+        >
+          {글제목[2]}
+        </h4>
         <p>2월 17일 발행</p>
       </div>
 
-      <Modal />
+      {modal == true ? <Modal /> : null}
     </div>
   );
 }

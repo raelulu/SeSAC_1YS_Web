@@ -36,7 +36,7 @@ const MenuItemForm = (props) => {
         //ref를 통해 인풋에 접근가능
         label="수량"
         input={{
-          id: "amount_" + props.id,
+          id: "amount",
           type: "number",
           min: "1",
           max: "5",

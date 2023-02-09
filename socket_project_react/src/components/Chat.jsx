@@ -8,11 +8,11 @@ export default function Chat() {
 <div id="chatHeader">Everyone</div>
             <div id="chatLog">
                 <div class="anotherMsg">
-                    <span class="anotherName">Jo</span>
-                    <span class="msg">Hello, Nice to meet you.</span>
+                    <span class="anotherName">Gorae</span>
+                    <span class="msg">안녕? 반가워</span>
                 </div>
                 <div class="myMsg">
-                    <span class="msg">Nice to meet you, too.</span>
+                    <span class="msg">나도 반가워!</span>
                 </div>
             </div>
 </div>

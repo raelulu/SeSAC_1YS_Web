@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"; //여기에서 장바구니 렌더링하기때문에 useState임포트.
+import React, { useState } from "react"; //여기에서 장바구니 렌더링하기때문에 useState임포트.
 import Header from "./components/Layout/Header";
 import "./App.css";
 import Coffee from "./components/Menu/Coffee";

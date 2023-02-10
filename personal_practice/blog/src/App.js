@@ -3,21 +3,21 @@ import "./App.css";
 
 function App() {
   //서버랑 연결안됐으니 변수로 만들어서.
-  let post = "용산 맛집";
+  //let post = "용산 맛집";
   let [글제목, 글제목변경] = useState([
     "남자 코트 추천",
     "맛집추천",
     "카페추천",
   ]);
-  let [따봉, 따봉변경] = useState(0);
-  let [따봉1, 따봉변경1] = useState(0);
-  let [따봉2, 따봉변경2] = useState(0);
+  //let [thumb, setThumb] = useState(0);
+  //let [thumb1, setThumb1] = useState(0);
+  //let [thumb2, setThumb2] = useState(0);
+  let [thumb, setThumb] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false); //UI의 현재상태를 state로 저장
-
   return (
     <div className="App">
       <div className="balck-nav">
-        <h4 style={{ color: "red", fontSize: "16px" }}>ReactBlog</h4>
+        <h4 style={{ color: "white", fontSize: "16px" }}>ReactBlog</h4>
       </div>
       <button
         onClick={() => {
@@ -28,7 +28,6 @@ function App() {
       >
         정렬버튼
       </button>
-
       <button
         onClick={() => {
           let copy = [...글제목];
@@ -43,16 +42,15 @@ function App() {
           {글제목[0]}
           <span
             onClick={() => {
-              따봉변경(따봉 + 1);
+              setThumb(thumb + 1);
             }}
           >
             👍
           </span>
-          {따봉}
+          {thumb}
         </h4>
         <p>2월 17일 발행</p>
       </div>
-
       <div className="list">
         <h4>{글제목[1]}</h4>
         <p>2월 17일 발행</p>
@@ -67,27 +65,32 @@ function App() {
         </h4>
         <p>2월 17일 발행</p>
       </div> */}
+      {/* {1 == 2 ? "맞음" : "아님"} */}
+      {/* {modal == true ? <Modal /> : null} */}
       {글제목.map(function (a, i) {
         return (
-          <div className="list" ket={i}>
-            <h4>
+          <div className="list" key={i}>
+            <h4
+              onClick={() => {
+                setModal(!modal);
+              }}
+            >
               {글제목[i]}
               <span
                 onClick={() => {
-                  let copy = [...따봉];
+                  let copy = [...thumb];
                   copy[i] = copy[i] + 1;
-                  따봉변경(copy);
+                  setThumb(copy);
                 }}
               >
                 👍
               </span>
-              {따봉[i]}
+              {thumb[i]}
             </h4>
             <p>2월 17일 발행</p>
           </div>
         );
       })}
-
       {modal == true ? <Modal /> : null}
     </div>
   );

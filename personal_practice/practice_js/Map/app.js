@@ -1,12 +1,8 @@
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function print(element) {
-  console.log(element);
-}
-
-numbers.forEach(function (el) {
-  if (el % 2 === 0) console.log(el);
-});
+// const doubles = numbers.map(function (num) {
+//   return num * 2;
+// });
 
 //for (let el of numbers) {
 //  console.log(el);
@@ -32,6 +28,10 @@ const movie = [
 ];
 
 //'Alien - 90/100'나오게 하고싶음
-movie.forEach(function (movie) {
-  console.log(`${movie.title}- ${movie.score}/100`);
+// movie.forEach(function (movie) {
+//   console.log(`${movie.title}- ${movie.score}/100`);
+// });
+
+const titles = movie.map(function (movie) {
+  return movie.title.toUpperCase();
 });

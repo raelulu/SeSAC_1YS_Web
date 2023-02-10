@@ -10,6 +10,8 @@ function App() {
     "카페추천",
   ]);
   let [따봉, 따봉변경] = useState(0);
+  let [따봉1, 따봉변경1] = useState(0);
+  let [따봉2, 따봉변경2] = useState(0);
   let [modal, setModal] = useState(false); //UI의 현재상태를 state로 저장
 
   return (
@@ -36,7 +38,7 @@ function App() {
       >
         수정버튼
       </button>
-      <div className="list">
+      {/* <div className="list">
         <h4>
           {글제목[0]}
           <span
@@ -64,7 +66,27 @@ function App() {
           {글제목[2]}
         </h4>
         <p>2월 17일 발행</p>
-      </div>
+      </div> */}
+      {글제목.map(function (a, i) {
+        return (
+          <div className="list" ket={i}>
+            <h4>
+              {글제목[i]}
+              <span
+                onClick={() => {
+                  let copy = [...따봉];
+                  copy[i] = copy[i] + 1;
+                  따봉변경(copy);
+                }}
+              >
+                👍
+              </span>
+              {따봉[i]}
+            </h4>
+            <p>2월 17일 발행</p>
+          </div>
+        );
+      })}
 
       {modal == true ? <Modal /> : null}
     </div>

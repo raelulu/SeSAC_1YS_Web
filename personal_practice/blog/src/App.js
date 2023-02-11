@@ -72,7 +72,7 @@ function App() {
           <div className="list" key={i}>
             <h4
               onClick={() => {
-                setModal(!modal);
+                setModal(true);
               }}
             >
               {글제목[i]}
@@ -91,17 +91,26 @@ function App() {
           </div>
         );
       })}
-      {modal == true ? <Modal /> : null}
+      {modal == true ? (
+        <Modal 글제목변경={글제목변경} color={"grey"} 글제목={글제목} />
+      ) : null}
     </div>
   );
 }
 
-function Modal() {
+function Modal(props) {
   return (
-    <div className="modal">
-      <h4>제목</h4>
+    <div className="modal" style={{ background: props.color }}>
+      <h4>{props.글제목[0]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
+      <button
+        onClick={() => {
+          props.글제목변경(["여자코트 추천", "맛집추천", "카페추천"]);
+        }}
+      >
+        글수정
+      </button>
     </div>
   );
 }

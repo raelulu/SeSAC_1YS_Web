@@ -14,6 +14,8 @@ function App() {
   //let [thumb2, setThumb2] = useState(0);
   let [thumb, setThumb] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false); //UI의 현재상태를 state로 저장
+  let [title, setTitle] = useState(0);
+  let [입력값, 입력값변경] = useState("");
   return (
     <div className="App">
       <div className="balck-nav">
@@ -73,6 +75,7 @@ function App() {
             <h4
               onClick={() => {
                 setModal(true);
+                setTitle(i);
               }}
             >
               {글제목[i]}
@@ -88,11 +91,41 @@ function App() {
               {thumb[i]}
             </h4>
             <p>2월 17일 발행</p>
+            <button
+              onClick={() => {
+                let copy = [...글제목];
+                copy.splice(i, 1);
+                글제목변경(copy);
+              }}
+            >
+              삭제
+            </button>
           </div>
         );
       })}
+
+      <input
+        onChange={(e) => {
+          입력값변경(e.target.value);
+          console.log(입력값);
+        }}
+      />
+      <button
+        onClick={() => {
+          let copy = [...글제목];
+          copy.unshift(입력값);
+          글제목변경(copy);
+        }}
+      >
+        글발행
+      </button>
       {modal == true ? (
-        <Modal 글제목변경={글제목변경} color={"grey"} 글제목={글제목} />
+        <Modal
+          title={title}
+          글제목변경={글제목변경}
+          color={"grey"}
+          글제목={글제목}
+        />
       ) : null}
     </div>
   );
@@ -101,16 +134,10 @@ function App() {
 function Modal(props) {
   return (
     <div className="modal" style={{ background: props.color }}>
-      <h4>{props.글제목[0]}</h4>
+      <h4>{props.글제목[props.title]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
-      <button
-        onClick={() => {
-          props.글제목변경(["여자코트 추천", "맛집추천", "카페추천"]);
-        }}
-      >
-        글수정
-      </button>
+      <button>글수정</button>
     </div>
   );
 }

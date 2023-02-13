@@ -5,6 +5,7 @@ import { useState } from "react";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail";
+
 function App() {
   let [shoes] = useState(data);
   console.log(shoes[0].title);
@@ -14,7 +15,7 @@ function App() {
     <div className="App">
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">ShoeShop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link
               onClick={() => {
@@ -57,17 +58,24 @@ function App() {
             </>
           }
         />
-        <Route path="/detail" element={<Detail />} />
-
-        <Route path="/about" element={<About />}>
+      
+        <Route path="/detail" element={<Detail/>} />
+     
+        <Route Route path="/about" element={<About/>} />
           <Route path="member" element={<div>멤버임</div>} />
           <Route path="location" element={<div>위치정보임</div>} />
-        </Route>
+  
         {/* <Route path="/about/member" element={<About />} />
         <Route path="/about/location" element={<About />} />
         ---->Nested Routes로 구현가능. 위랑 같은 문법 */}
+  
+        <Route path="/event" element={<EventPage/>}>
+          <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>}></Route>
+          <Route path="two" element={<p>생일기념 쿠폰받기</p>}></Route>
+        </Route>
+        </Routes> 
+      
         <Route path="*" element={<div>없는페이지입니다</div>} />
-      </Routes>
     </div>
   );
 }
@@ -75,7 +83,7 @@ function App() {
 function Card(props) {
   return (
     <div className="col-md-4">
-      <img
+      <img alt="img"
         src={
           "https://codingapple1.github.io/shop/shoes" + (props.i + 1) + ".jpg"
         }
@@ -93,5 +101,14 @@ function About() {
     <Outlet></Outlet>
   </div>;
 }
+
+function EventPage(){
+  return (
+    <div>
+      <h4>오늘의 이벤트</h4>
+      <Outlet></Outlet>
+    </div>
+  )
+} 
 
 export default App;

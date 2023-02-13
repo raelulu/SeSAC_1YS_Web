@@ -5,7 +5,7 @@ export default function Detail() {
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <img
+          <img alt="img"
             src="https://codingapple1.github.io/shop/shoes1.jpg"
             width="100%"
           />

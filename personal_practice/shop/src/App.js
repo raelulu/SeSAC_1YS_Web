@@ -44,6 +44,8 @@ function App() {
                 className="main-bg"
                 style={{ backgroundImage: "url(" + bg + ")" }}
               ></div>
+              <button onClick="arrBtn()">정렬버튼</button>
+
               <div className="container">
                 <div className="row">
                   {/* <Card shoes={shoes[0]} i={1} />
@@ -58,24 +60,26 @@ function App() {
             </>
           }
         />
-      
-        <Route path="/detail" element={<Detail/>} />
-     
-        <Route Route path="/about" element={<About/>} />
-          <Route path="member" element={<div>멤버임</div>} />
-          <Route path="location" element={<div>위치정보임</div>} />
-  
+        <Route path="/detail" element={<Detail shoes={shoes} />} />
+
+        <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
+
+        <Route path="/about" element={<About />}>
+          <Route path="member" element={<div>멤버들</div>} />
+          <Route path="location" element={<div>회사위치</div>} />
+        </Route>
+
         {/* <Route path="/about/member" element={<About />} />
         <Route path="/about/location" element={<About />} />
         ---->Nested Routes로 구현가능. 위랑 같은 문법 */}
-  
-        <Route path="/event" element={<EventPage/>}>
+      </Routes>
+      <Routes>
+        <Route path="/event" element={<EventPage />}>
           <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>}></Route>
           <Route path="two" element={<p>생일기념 쿠폰받기</p>}></Route>
         </Route>
-        </Routes> 
-      
         <Route path="*" element={<div>없는페이지입니다</div>} />
+      </Routes>
     </div>
   );
 }
@@ -83,7 +87,8 @@ function App() {
 function Card(props) {
   return (
     <div className="col-md-4">
-      <img alt="img"
+      <img
+        alt="img"
         src={
           "https://codingapple1.github.io/shop/shoes" + (props.i + 1) + ".jpg"
         }
@@ -96,19 +101,20 @@ function Card(props) {
 }
 
 function About() {
-  <div>
-    <h4>회사정보임</h4>
-    <Outlet></Outlet>
-  </div>;
+  return (
+    <div>
+      <h4>about페이지임</h4>
+      <Outlet></Outlet>
+    </div>
+  );
 }
 
-function EventPage(){
+function EventPage() {
   return (
     <div>
       <h4>오늘의 이벤트</h4>
       <Outlet></Outlet>
     </div>
-  )
-} 
-
+  );
+}
 export default App;

@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../components/Header.jsx";
-import Inform from "../components/Inform.jsx";
+import Header from "../components/common/Header.jsx";
+import Inform from "../components/crew/Inform.jsx";
 import styled, { css } from "styled-components";
-import Button from "../components/Button.jsx";
-import CrewBox from "../components/CrewBox.jsx";
+import Button from "../components/common/Button.jsx";
+import CrewBox from "../components/crew/CrewBox.jsx";
 
 let Div = styled.div`
   position: absolute;

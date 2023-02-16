@@ -1,10 +1,11 @@
 import "./App.css";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Table } from "react-bootstrap";
 import bg from "./bg.png";
 import { useState } from "react";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail";
+import Cart from "./pages/Cart";
 
 function App() {
   let [shoes] = useState(data);
@@ -72,6 +73,7 @@ function App() {
         {/* <Route path="/about/member" element={<About />} />
         <Route path="/about/location" element={<About />} />
         ---->Nested Routes로 구현가능. 위랑 같은 문법 */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Routes>
         <Route path="/event" element={<EventPage />}>

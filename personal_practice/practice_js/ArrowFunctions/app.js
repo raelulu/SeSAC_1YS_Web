@@ -38,6 +38,4 @@ const movies = [
 // });
 //위를 화살표함수로 줄이기
 
-const newMovies = movies.map(
-  (movie) => `${movie.title} - ${movies.score / 10}`
-);
+const newMovies = movies.map((movie) => `${movie.title} - ${movie.score / 10}`);

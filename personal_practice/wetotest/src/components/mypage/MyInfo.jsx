@@ -1,7 +1,8 @@
-import React, { useState } from "react"; // eslint-disable-line no-unused-vars
-import "./MyInfo.css";
-import Modal from "./Modal";
-import styled from "styled-components";
+import React from 'react'; // eslint-disable-line no-unused-vars
+import './MyInfo.css';
+import Modal from './Modal';
+import styled from 'styled-components';
+import { useState } from 'react';
 
 const BTN1 = styled.button`
   z-index: 1;

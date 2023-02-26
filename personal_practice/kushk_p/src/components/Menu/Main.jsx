@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import AvailableMenu from './AvailableMenu';
-import Second from './Second';
+import React, { useState } from "react";
+import styled from "styled-components";
+import AvailableMenu from "./AvailableMenu";
+import Second from "./Second";
 
 const Main = () => {
   const [content, setContent] = useState();
 
-  const handleClickButton = e => {
+  const handleClickButton = (e) => {
     const { name } = e.target;
     setContent(name);
   };
@@ -14,19 +14,17 @@ const Main = () => {
   const selectComponent = {
     first: <AvailableMenu />,
     second: <Second />,
-
   };
-
 
   return (
     <div>
-        {MAIN_DATA.map(data => {
-          return (          
-            <Button onClick={handleClickButton} name={data.name} key={data.id}>
-              {data.text}
-            </Button>     
-          );
-        })}
+      {MAIN_DATA.map((data) => {
+        return (
+          <Button onClick={handleClickButton} name={data.name} key={data.id}>
+            {data.text}
+          </Button>
+        );
+      })}
       {content && <Content>{selectComponent[content]}</Content>}
     </div>
   );
@@ -52,15 +50,13 @@ const Content = styled.div`
 
 export const MAIN_DATA = [
   {
-  id: 1,
-  text: '커피',
-  name: 'first',
+    id: 1,
+    text: "커피",
+    name: "first",
   },
   {
-  id: 2,
-  text: '논커피',
-  name: 'second',
+    id: 2,
+    text: "논커피",
+    name: "second",
   },
-  ];
-  
-  
+];

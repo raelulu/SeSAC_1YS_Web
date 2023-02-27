@@ -15,7 +15,7 @@ export default function Detail(props) {
 
   let [alert, setAlert] = useState(true);
   useEffect(() => {
-    //console.log("안녕");
+    console.log("안녕");
     setTimeout(() => {
       setAlert(false);
     }, 2000);

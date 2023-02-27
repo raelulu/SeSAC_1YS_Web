@@ -1,10 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
+
+let YellowBtn = styled.button`
+  background: ${(props) => props.bg};
+  color: ${(props) => (props.bg == "blue" ? "white" : "black")};
+  padding: 10px;
+`;
 
 export default function Detail(props) {
-  // let { id } = useParams();
-  //console.log(id);
+  let { id } = useParams();
+  console.log(id);
+
   let [alert, setAlert] = useState(true);
   useEffect(() => {
     //console.log("안녕");
@@ -16,6 +24,11 @@ export default function Detail(props) {
 
   return (
     <div className="container">
+      <div>
+        <YellowBtn bg="orange">오렌지색 버튼임</YellowBtn>
+        <YellowBtn bg="blue">파란색 버튼임</YellowBtn>
+      </div>
+
       {alert === true ? (
         <div className="alert alert-warning">2초이내 구매시 할인</div>
       ) : null}
@@ -36,9 +49,9 @@ export default function Detail(props) {
           />
         </div>
         <div className="col-md-6 mt-4">
-          <h4 className="pt-5">{props.shoes[0].title}</h4>
-          <p>{props.shoes[0].content}</p>
-          <p>{props.shoes[0].price}원</p>
+          <h4 className="pt-5">{props.shoes[id].title}</h4>
+          <p>{props.shoes[id].content}</p>
+          <p>{props.shoes[id].price}원</p>
           <button className="btn btn-danger">주문하기</button>
         </div>
       </div>

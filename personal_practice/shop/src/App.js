@@ -61,8 +61,7 @@ function App() {
             </>
           }
         />
-        <Route path="/detail" element={<Detail shoes={shoes} />} />
-
+        {/* <Route path="/detail" element={<Detail shoes={shoes} />} /> */}
         <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
 
         <Route path="/about" element={<About />}>

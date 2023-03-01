@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Nav } from "react-bootstrap";
+import "../../src/App.css";
 
 let YellowBtn = styled.button`
   background: ${(props) => props.bg};
@@ -14,16 +16,25 @@ export default function Detail(props) {
   console.log(id);
 
   let [alert, setAlert] = useState(true);
-  useEffect(() => {
-    console.log("안녕");
-    setTimeout(() => {
-      setAlert(false);
-    }, 2000);
-  }, []);
+  let [탭, 탭변경] = useState(0);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setAlert(false);
+  //   }, 2000);
+  // }, []);
   let [count, setCount] = useState(0);
 
+  let [fade2, setFade2] = useState("");
+  useEffect(() => {
+    setFade2("end");
+    return () => {
+      setFade2("");
+    };
+  }, []);
+
   return (
-    <div className="container">
+    <div className={"container start " + fade2}>
       <div>
         <YellowBtn bg="orange">오렌지색 버튼임</YellowBtn>
         <YellowBtn bg="blue">파란색 버튼임</YellowBtn>
@@ -55,6 +66,57 @@ export default function Detail(props) {
           <button className="btn btn-danger">주문하기</button>
         </div>
       </div>
+      <Nav variant="tabs" defaultActiveKey="link1">
+        <Nav.Item>
+          <Nav.Link
+            onClick={() => {
+              탭변경(0);
+            }}
+            eventKey="link0"
+          >
+            버튼0
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            onClick={() => {
+              탭변경(1);
+            }}
+            eventKey="link1"
+          >
+            버튼1
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            onClick={() => {
+              탭변경(2);
+            }}
+            eventKey="link2"
+          >
+            버튼2
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <TabContent shoes={props.shoes} 탭={탭} />
     </div>
   );
+  function TabContent({ 탭 }) {
+    let [fade, setFade] = useState("");
+
+    useEffect(() => {
+      setTimeout(() => {
+        setFade("end");
+      }, 100);
+      return () => {
+        setFade("");
+      };
+    }, [탭]);
+
+    return (
+      <div className={"start " + fade}>
+        {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][탭]}
+      </div>
+    );
+  }
 }

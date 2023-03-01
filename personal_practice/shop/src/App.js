@@ -1,7 +1,7 @@
 import "./App.css";
 import { Navbar, Container, Nav, Table } from "react-bootstrap";
 import bg from "./bg.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./data.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail";
@@ -9,7 +9,7 @@ import Cart from "./pages/Cart";
 import axios from "axios";
 
 function App() {
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
   console.log(shoes[0].title);
   let navigate = useNavigate();
 
@@ -65,6 +65,19 @@ function App() {
                     .get("https://codingapple1.github.io/shop/data2.json")
                     .then((결과) => {
                       console.log(결과.data);
+                      let copy = [...shoes, ...결과.data];
+                      setShoes(copy);
+                    });
+                }}
+              >
+                더보기
+              </button>
+              {/* <button
+                onClick={() => {
+                  axios
+                    .get("https://codingapple1.github.io/shop/data2.json")
+                    .then((결과) => {
+                      console.log(결과.data);
                     })
                     .catch(() => {
                       console.log("실패함");
@@ -72,7 +85,7 @@ function App() {
                 }}
               >
                 버튼
-              </button>
+              </button> */}
             </>
           }
         />
@@ -94,7 +107,7 @@ function App() {
           <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>}></Route>
           <Route path="two" element={<p>생일기념 쿠폰받기</p>}></Route>
         </Route>
-        <Route path="*" element={<div>없는페이지입니다</div>} />
+        {/* <Route path="*" element={<div>없는페이지입니다</div>} /> */}
       </Routes>
     </div>
   );

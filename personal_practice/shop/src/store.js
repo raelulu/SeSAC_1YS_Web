@@ -1,9 +1,11 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import user from "./store/userSlice.js";
+
 let stock = createSlice({
   name: "stock", //state이름
   initialState: [0, 1, 2], //값
 });
+
 let cart = createSlice({
   name: "cart", //state이름
   initialState: [
@@ -16,6 +18,7 @@ let cart = createSlice({
     },
   },
 });
+
 export let { changeCount } = cart.actions;
 
 export default configureStore({

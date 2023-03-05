@@ -9,6 +9,7 @@ export default function Cart() {
   console.log(state.cart[0].name);
 
   let dispatch = useDispatch();
+
   return (
     <div>
       <h6>

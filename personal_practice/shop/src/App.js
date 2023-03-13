@@ -9,6 +9,11 @@ import Cart from "./pages/Cart";
 import axios from "axios";
 
 function App() {
+  let obj = { name: "kim" };
+  localStorage.setItem("data", JSON.stringify(obj));
+  let 꺼낸거 = localStorage.getItem("data");
+  console.log(꺼낸거);
+
   let [shoes, setShoes] = useState(data);
   console.log(shoes[0].title);
   let navigate = useNavigate();

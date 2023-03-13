@@ -41,7 +41,7 @@ export default function Cart() {
               <td>
                 <button
                   onClick={() => {
-                    dispatch(changeCount(i));
+                    dispatch(changeCount(state.cart[i].id));
                   }}
                 >
                   +

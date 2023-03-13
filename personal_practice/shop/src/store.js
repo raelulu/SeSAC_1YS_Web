@@ -14,12 +14,20 @@ let cart = createSlice({
   ], //값
   reducers: {
     changeCount(state, action) {
-      state[action.payload].count++;
+      let 번호 = state.findIndex((value) => {
+        return value.id === action.payload;
+      });
+      state[번호].count++;
+    },
+    addItem(state, action) {
+      state.push(action.payload);
     },
   },
 });
 
-export let { changeCount } = cart.actions;
+// addItem({ id: 1, name: "Red Knit", count: 1 });
+
+export let { changeCount, addItem } = cart.actions;
 
 export default configureStore({
   reducer: {

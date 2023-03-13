@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from "react-bootstrap";
 import "../../src/App.css";
+import { addItem } from "../store";
+import { useDispatch } from "react-redux";
 
 let YellowBtn = styled.button`
   background: ${(props) => props.bg};
@@ -17,6 +19,8 @@ export default function Detail(props) {
 
   let [alert, setAlert] = useState(true);
   let [탭, 탭변경] = useState(0);
+
+  let dispatch = useDispatch();
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -63,7 +67,14 @@ export default function Detail(props) {
           <h4 className="pt-5">{props.shoes[id].title}</h4>
           <p>{props.shoes[id].content}</p>
           <p>{props.shoes[id].price}원</p>
-          <button className="btn btn-danger">주문하기</button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              dispatch(addItem({ id: 1, name: "Red Knit", count: 1 }));
+            }}
+          >
+            주문하기
+          </button>
         </div>
       </div>
       <Nav variant="tabs" defaultActiveKey="link1">

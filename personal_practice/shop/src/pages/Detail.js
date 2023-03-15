@@ -16,11 +16,16 @@ let YellowBtn = styled.button`
 export default function Detail(props) {
   let { id } = useParams();
   console.log(id);
+  // let 찾은상품 = props.shoes.find((x) => x.id == id);
 
   let [alert, setAlert] = useState(true);
   let [탭, 탭변경] = useState(0);
 
   let dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   console.log(찾은상품.id);
+  // }, []);
 
   // useEffect(() => {
   //   setTimeout(() => {

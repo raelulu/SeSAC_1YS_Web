@@ -9,10 +9,6 @@ import Cart from "./pages/Cart";
 import axios from "axios";
 
 function App() {
-  useEffect(() => {
-    localStorage.setItem("watched", JSON.stringify([]));
-  });
-
   let obj = { name: "kim" };
   localStorage.setItem("data", JSON.stringify(obj));
   let 꺼낸거 = localStorage.getItem("data");

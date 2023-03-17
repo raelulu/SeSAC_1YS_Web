@@ -16,16 +16,22 @@ let YellowBtn = styled.button`
 export default function Detail(props) {
   let { id } = useParams();
   console.log(id);
-  // let 찾은상품 = props.shoes.find((x) => x.id == id);
-
+  let 찾은상품 = props.shoes.find((x) => x.id == id);
   let [alert, setAlert] = useState(true);
   let [탭, 탭변경] = useState(0);
 
   let dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   console.log(찾은상품.id);
-  // }, []);
+  useEffect(() => {
+    let 꺼낸거 = localStorage.getItem("watched");
+    꺼낸거 = JSON.parse(꺼낸거);
+    꺼낸거.push(찾은상품.id);
+
+    //Set으로 바꿨다가 다시 array로 만들기
+    꺼낸거 = new Set(꺼낸거);
+    꺼낸거 = Array.from(꺼낸거);
+    localStorage.setItem("watched", JSON.stringify(꺼낸거));
+  }, []);
 
   // useEffect(() => {
   //   setTimeout(() => {

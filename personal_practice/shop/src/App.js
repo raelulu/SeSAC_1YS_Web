@@ -7,6 +7,7 @@ import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail";
 import Cart from "./pages/Cart";
 import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 function App() {
   let obj = { name: "kim" };
@@ -16,10 +17,19 @@ function App() {
   console.log(꺼낸거);
   console.log(JSON.parse(꺼낸거).name);
 
+  useEffect(() => {
+    localStorage.setItem("watched", JSON.stringify([]));
+  }, []);
+
   let [shoes, setShoes] = useState(data);
   console.log(shoes[0].title);
   let navigate = useNavigate();
 
+  let result = useQuery("작명", () =>
+    axios.get("https://codingapple1.github.io/userdata.json").then((a) => {
+      return a.data;
+    })
+  );
   return (
     <div className="App">
       <Navbar bg="dark" variant="dark">
@@ -41,6 +51,7 @@ function App() {
               Detail
             </Nav.Link>
           </Nav>
+          <Nav className="ms-auto">반가워요 kim</Nav>
         </Container>
       </Navbar>
 

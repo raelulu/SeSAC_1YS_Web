@@ -36,3 +36,31 @@ let 학교: {
 };
 학교.score[4] = false;
 학교.friend = ["Lee", 학교.teacher];
+
+//함수에 타입지정공부
+function sayHi(이름?: string): void {
+  if (이름) {
+    console.log("안녕하세요 " + 이름);
+  } else {
+    console.log("이름이 없습니다");
+  }
+}
+
+function cipers(x: number | string): number {
+  return x.toString().length;
+}
+
+function marriage(money: number, house: boolean, charm: string): string | void {
+  let score: number = 0;
+  score += money;
+  if (house === true) {
+    score += 500;
+  }
+  if (charm === "상") {
+    score += 100;
+  }
+  if (score >= 600) {
+    return "결혼가능";
+  }
+}
+console.log(marriage(100, true, "상"));

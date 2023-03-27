@@ -46,8 +46,8 @@ function sayHi(이름?: string): void {
   }
 }
 
-function cipers(x: number | string): number {
-  return x.toString().length;
+function cipers(letter: number | string): number {
+  return letter.toString().length;
 }
 
 function marriage(money: number, house: boolean, charm: string): string | void {
@@ -63,4 +63,39 @@ function marriage(money: number, house: boolean, charm: string): string | void {
     return "결혼가능";
   }
 }
-console.log(marriage(100, true, "상"));
+// console.log(marriage(100, true, "상"));
+
+function cleaningFunc(num: (number | string)[]) {
+  let cleaningNum: number[] = [];
+
+  num.forEach((num2) => {
+    if (typeof num2 === "string") {
+      cleaningNum.push(parseFloat(num2));
+    } else {
+      cleaningNum.push(num2);
+    }
+  });
+
+  return cleaningNum;
+}
+console.log(cleaningFunc([12, "3"]));
+
+function lastSubject(ex: { subject: string | string[] }) {
+  if (typeof ex.subject === "string") {
+    return ex.subject;
+  } else if (Array.isArray(ex.subject)) {
+    return ex.subject[ex.subject.length - 1];
+  } else {
+    return "에러";
+  }
+}
+console.log(lastSubject({ subject: ["english", "art", "math"] }));
+
+function game(a: "가위" | "바위" | "보"): ("가위" | "바위" | "보")[] {
+  return ["가위", "바위"];
+}
+
+var 자료 = {
+  name: "kim",
+};
+function 내함수(a: "kim") {}

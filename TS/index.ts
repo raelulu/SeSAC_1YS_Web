@@ -1,6 +1,6 @@
 let 이름 = "고래";
 let 나이 = 10;
-let 출생지역 = "제주";
+//let 출생지역 = "제주";
 
 var 좋아하는거: { song: string; singer: string } = {
   song: "PeacePiece",
@@ -99,3 +99,44 @@ var 자료 = {
   name: "kim",
 };
 function 내함수(a: "kim") {}
+
+//변수에 타입지정
+let 동물: string | number | undefined;
+//위처럼 타입이 길고 복잡하면 변수로 빼서 사용한다
+type AnimalType = string | number | undefined;
+let 동물2: AnimalType;
+
+//readonly로 잠그기
+type Birthplace = {
+  readonly region: string;
+};
+
+let 출생지역: Birthplace = {
+  region: "seoul",
+};
+//출생지역.region = "busan"; //readonly라서 에러남
+
+type Type = {
+  color?: string;
+  size: number;
+  readonly position: number[];
+};
+
+let 테스트: Type = {
+  size: 10,
+  position: [1, 2],
+};
+
+type Person = {
+  name: string;
+  phone: number;
+  email: string;
+};
+type Adult = { minor: boolean };
+type User = Person & Adult;
+let 사람: User = {
+  name: "나나",
+  phone: 123,
+  email: "nana",
+  minor: true,
+};

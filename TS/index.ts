@@ -140,3 +140,22 @@ let 사람: User = {
   email: "nana",
   minor: true,
 };
+
+//method안 타입지정
+type Member = {
+  name: string;
+  plusOne: (num: number) => number;
+  changeName: () => void;
+};
+
+let 회원정보: Member = {
+  name: "kim",
+  plusOne(x) {
+    return x + 1;
+  },
+  changeName: () => {
+    console.log("안녕");
+  },
+};
+회원정보.plusOne(1);
+회원정보.changeName();

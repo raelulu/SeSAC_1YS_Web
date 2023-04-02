@@ -1,3 +1,5 @@
+import { type } from "os";
+
 let 이름 = "고래";
 let 나이 = 10;
 //let 출생지역 = "제주";
@@ -78,7 +80,7 @@ function cleaningFunc(num: (number | string)[]) {
 
   return cleaningNum;
 }
-console.log(cleaningFunc([12, "3"]));
+//console.log(cleaningFunc([12, "3"]));
 
 function lastSubject(ex: { subject: string | string[] }) {
   if (typeof ex.subject === "string") {
@@ -89,7 +91,7 @@ function lastSubject(ex: { subject: string | string[] }) {
     return "에러";
   }
 }
-console.log(lastSubject({ subject: ["english", "art", "math"] }));
+//console.log(lastSubject({ subject: ["english", "art", "math"] }));
 
 function game(a: "가위" | "바위" | "보"): ("가위" | "바위" | "보")[] {
   return ["가위", "바위"];
@@ -154,8 +156,54 @@ let 회원정보: Member = {
     return x + 1;
   },
   changeName: () => {
-    console.log("안녕");
+    // console.log("안녕");
   },
 };
 회원정보.plusOne(1);
 회원정보.changeName();
+
+type CutType = (x: string) => string;
+
+let cutZero: CutType = function (x) {
+  let result = x.replace(/^0+/, "");
+  return result;
+};
+
+type RemoveType = (x: string) => number;
+
+let removeDash: RemoveType = function (x) {
+  let result = x.replace(/-/g, "");
+  return parseFloat(result);
+};
+
+function newCuRe(a: string, cutZero: CutType, removeDash: RemoveType) {
+  let result = cutZero(a);
+  let result2 = removeDash(result);
+  console.log(result2);
+}
+newCuRe("010-1111-2222", cutZero, removeDash); //1011112222 출력될것
+
+let 제목 = document.querySelector("#title");
+if (제목 != null) {
+  제목.innerHTML = "반갑습니다";
+} else {
+}
+
+let 링크 = document.querySelector(".link");
+if (링크 instanceof HTMLAnchorElement) 링크.href = "https://kakao.com";
+
+let 버튼 = document.getElementById("button");
+버튼?.addEventListener("click", function () {
+  console.log("안녕");
+});
+
+let 이미지 = document.querySelector("#image");
+if (이미지 instanceof HTMLImageElement) 이미지.src = "new.jpg ";
+
+let 카카오링크 = document.querySelectorAll(".naver");
+for (let i = 0; i < 3; i++) {
+  let a = 카카오링크[i];
+  if (a instanceof HTMLAnchorElement) {
+    a.href = "https://kakao.com";
+  }
+}

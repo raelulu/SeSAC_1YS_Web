@@ -197,8 +197,8 @@ let 버튼 = document.getElementById("button");
   console.log("안녕");
 });
 
-let 이미지 = document.querySelector("#image");
-if (이미지 instanceof HTMLImageElement) 이미지.src = "new.jpg ";
+// let 이미지 = document.querySelector("#image");
+// if (이미지 instanceof HTMLImageElement) 이미지.src = "new.jpg ";
 
 let 카카오링크 = document.querySelectorAll(".naver");
 for (let i = 0; i < 3; i++) {

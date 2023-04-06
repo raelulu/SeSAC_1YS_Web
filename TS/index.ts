@@ -207,3 +207,23 @@ for (let i = 0; i < 3; i++) {
     a.href = "https://kakao.com";
   }
 }
+
+class Personn {
+  //data: number = 0;
+  name: string;
+  constructor(a: string) {
+    this.name = a;
+  }
+
+  함수(a: string) {
+    console.log("안녕" + a);
+  }
+}
+
+let 사람1 = new Personn("kim");
+let 사람2 = new Personn("park");
+
+//console.log(사람1.data);
+console.log(사람1);
+console.log(사람2);
+사람1.함수("안녕");

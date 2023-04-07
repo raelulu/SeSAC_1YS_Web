@@ -156,3 +156,11 @@ class Hero {
   }
 }
 var nunu = new Hero("wawa");
+
+function 기계() {
+  this.q = "strike";
+  this.w = "snowball";
+}
+
+기계.prototype.name = "kim";
+var nana = new 기계();

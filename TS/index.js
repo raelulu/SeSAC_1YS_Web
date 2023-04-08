@@ -163,4 +163,5 @@ function 기계() {
 }
 
 기계.prototype.name = "kim";
+
 var nana = new 기계();

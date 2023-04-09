@@ -227,3 +227,43 @@ let 사람2 = new Personn("park");
 console.log(사람1);
 console.log(사람2);
 사람1.함수("안녕");
+
+//Car클래스 만들기 실습
+class Car {
+  model: string;
+  price: number;
+  constructor(mod: string, pri: number) {
+    this.model = mod;
+    this.price = pri;
+  }
+  tax(): number {
+    return this.price * 0.1;
+  }
+}
+
+let car1 = new Car("소나타", 3000);
+console.log(car1);
+console.log(car1.tax());
+
+class Word {
+  num;
+  str;
+  constructor(...param) {
+    let 숫자들: number[] = [];
+    let 문자들: string[] = [];
+
+    param.forEach((i) => {
+      if (typeof i === "string") {
+        문자들.push(i);
+      } else {
+        숫자들.push(i);
+      }
+    });
+    this.num = 숫자들;
+    this.str = 문자들;
+  }
+}
+
+let obj = new Word("kim", 3, 5, "park");
+console.log(obj.num);
+console.log(obj.str);

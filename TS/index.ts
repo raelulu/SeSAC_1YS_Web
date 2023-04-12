@@ -317,3 +317,9 @@ let 옵젝트: MathObj = {
     return x - y;
   },
 };
+//rest파라미터 타입지정
+function 전부더하기(...a: number[]) {
+  console.log(a);
+}
+
+전부더하기(1, 2, 3, 4, 5);

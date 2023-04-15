@@ -14,15 +14,15 @@ function App() {
   localStorage.setItem("data", JSON.stringify(obj));
   let 꺼낸거 = localStorage.getItem("data");
 
-  console.log(꺼낸거);
-  console.log(JSON.parse(꺼낸거).name);
+  // console.log(꺼낸거);
+  // console.log(JSON.parse(꺼낸거).name);
 
   useEffect(() => {
     localStorage.setItem("watched", JSON.stringify([]));
   }, []);
 
   let [shoes, setShoes] = useState(data);
-  console.log(shoes[0].title);
+  // console.log(shoes[0].title);
   let navigate = useNavigate();
 
   let result = useQuery("작명", () =>

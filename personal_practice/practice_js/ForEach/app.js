@@ -1,18 +1,22 @@
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function print(element) {
-  console.log(element);
+// function print(element) {
+//   console.log(element);
+// }
+
+// numbers.forEach(function (el) {
+//   console.log(el);
+// });
+
+for (let el of numbers) {
+  console.log(el);
 }
 
 numbers.forEach(function (el) {
   if (el % 2 === 0) console.log(el);
 });
 
-//for (let el of numbers) {
-//  console.log(el);
-//}
-
-const movie = [
+const movies = [
   {
     title: "Amadeus",
     score: 99,
@@ -32,6 +36,6 @@ const movie = [
 ];
 
 //'Alien - 90/100'나오게 하고싶음
-movie.forEach(function (movie) {
+movies.forEach(function (movie) {
   console.log(`${movie.title}- ${movie.score}/100`);
 });

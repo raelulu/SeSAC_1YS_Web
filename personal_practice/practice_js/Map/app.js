@@ -1,14 +1,14 @@
-// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// const doubles = numbers.map(function (num) {
-//   return num * 2;
-// });
+const doubles = numbers.map(function (num) {
+  return num * 2;
+});
 
 //for (let el of numbers) {
 //  console.log(el);
 //}
 
-const movie = [
+const movies = [
   {
     title: "Amadeus",
     score: 99,
@@ -32,6 +32,6 @@ const movie = [
 //   console.log(`${movie.title}- ${movie.score}/100`);
 // });
 
-const titles = movie.map(function (movie) {
+const titles = movies.map(function (movie) {
   return movie.title.toUpperCase();
 });

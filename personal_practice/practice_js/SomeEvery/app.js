@@ -1,6 +1,6 @@
 const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77];
 
-exams.every((score) => score >= 75);
+exams.every((score) => score >= 75); //모든요소가 true로 반환될 것
 
 const movies = [
   {
